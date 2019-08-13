@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sports</title>
+  <meta name="turbolinks-cache-control" content="no-cache">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <%= javascript_include_tag 'application' %>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if flash[:toastr] %>
+  <script type="text/javascript">
+    <% [*flash[:toastr]].each do |type, message| %>
+    toastr.<%= type %>(<%= message.inspect %>)
+    <% end %>
+  </script>
+  <% end %>
+  <%# if current_controller?('users') %>
+    <!-- <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to 'Sports', root_path, class: 'navbar-brand' %>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to 'Home', root_path %></li>
+          <% if current_admin_user.present? %>
+          <li><%= link_to 'Users', admin_users_path %></li>
+          <li><%= link_to 'Athlete', admin_users_path(filter: 'athlete') %></li>
+          <li><%= link_to 'Team', admin_users_path(filter: 'team') %></li>
+          <li><%= link_to 'Company', admin_users_path(filter: 'company') %></li>
+          <% else %>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_admin_user.present? %>
+          <li>
+            <%= link_to destroy_admin_user_session_path, method: :delete do %>
+            <span class="glyphicon glyphicon-log-in"></span> Logout
+            <% end %>
+          </li>
+          <% else %>
+          <li>
+            <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav> -->
+    <%# end %>
+  <% if current_user.present? %>
+    <div class="bs-demo-showcase">
+      <%= render 'shared/header' %>
+      <%=render 'shared/sub_header'%>
+    </div>
+  <% end %>
+<%= yield %>
+    <%= render 'shared/footer' %>
+</body>
+</html>

@@ -1,0 +1,529 @@
+/*Edit profile css*/
+
+.guided-edit {
+  margin-top:22px;
+  background: #16A086;
+  opacity: 0.8;
+}
+
+.guided-edit input {
+  width: 60%;
+  height: 30px;
+  border: 1px solid silver;
+  text-indent: 10px;
+  margin-left: 10px;
+}
+
+.edit-profile-btn {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-bottom: 15px;
+
+}
+
+
+/*.profile-info button {
+  width: 247px;
+  height: 30px;
+  border: 1px solid #16A086;
+  background-color: #16A086;
+  color: #fff;
+}*/
+
+.profile-info{
+  margin: 10px;
+}
+
+.edit-profile-btn  button {
+  width: 80px;
+  border-radius: 0px;
+}
+
+.edit-profile-image img{
+  margin-top: 18px;
+  width: 240px;
+  height: 182px;
+}
+
+/*.profile-info span {
+  margin-left: 30px;
+  cursor: pointer;
+}*/
+
+.guided-edit-title {
+  color: #fff;
+  font-size: 15px;
+  margin-left: 10px;
+  padding-top:15px;
+}
+
+.edit-background-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+.edit-background-btn button {
+  height: 45px;
+  width: 215px;
+  background: silver;
+  opacity: 0.6;
+}
+
+.fa-pencil {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.edit-profile-image {
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.edit-close {
+  margin-right: 10px;
+  color: #fff;
+}
+
+.profile-info p {
+  font-size: 15px;
+}
+
+.public-profile-section {
+  width:100%;
+  background-color:#CEECF5;
+  border-top: 1px solid silver;
+  padding:0px 15px;
+  border-bottom: 1px solid silver;
+  color:#fff;
+}
+
+/*.profile-item span{
+  margin-left: 30px;
+}*/
+.profile-item{
+  margin-left: 10px;
+}
+
+.profile-item p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.public-profile-info {
+  background:#fff; 
+  display:none;
+  padding:15px;
+}
+
+.career-details {
+  background-color:#CEECF5;
+}
+
+.career-details img {
+  width:90px;
+  float:left;
+  /*height:85px;
+  margin-right: 15px;*/
+  padding: 11px 17px 11px;
+}
+
+.view-details {
+  height: 44px;
+  background: #fff;
+  margin-top: 10px;
+  line-height: 45px;
+}
+
+.media-details>li {
+  padding: 5px 10px;
+  background: silver;
+  margin-bottom: 10px;
+}
+
+.experience-details {
+  padding: 5px;
+  background-color: #fff;
+}
+
+.education-details {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.pro-title{
+  padding: 15px;
+  background:#fff;
+  margin: 0px;
+}
+
+.media-info {
+  margin-left:10px;
+  margin-top:50px;
+  text-align:center;
+}
+
+.edu-add-position {
+  padding:5px;
+  background:silver;
+  text-align:center;
+  margin:0px;
+  cursor:pointer;
+}
+
+.add-edu-details,.add-sk {
+  background:#eee;
+  padding:15px;
+  display: none;
+} 
+  
+.fa-plus {
+  font-size: 15px;
+  color: blue;
+  margin-right: 10px;
+}
+
+.education-details p,.experience-details p {
+  font-size: 15px;
+}
+
+.add-skill {
+  padding:5px;
+  background:silver;
+  text-align:center;
+  margin:0px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.folow-item img {
+  width: 100px;
+  margin-top: 10px;
+  height: 100px;
+}
+
+.folow-item p {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.food-info{
+  text-align:center;
+  padding:10px;
+  background:#008080;
+  margin-top:10px;
+} 
+
+.list-inline-foo>li>a {
+  color:#fff;
+}
+
+.list-inline-foo {
+  display:inline;
+  margin-top:10px;
+  color:#fff;
+}
+
+.view-profile p {
+  font-size: 15px;
+}
+
+.view-profile span {
+  margin-right: 10px;
+}
+
+.edit-right-nav-bg {
+  background: #fff;
+}
+
+.view-btn {
+  /*background-color: #4CAF50;
+  color: white;*/
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 247px;
+  height: 30px;
+  border: 1px solid #16A086;
+  background-color: #16A086;
+  color: #fff;
+}
+
+.profile-view {
+  position: relative;
+}
+
+.profile-sub {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: -10px;
+}
+
+.profile-sub a {
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.profile-sub a:hover {
+  background-color: #CEECF5;
+}
+
+.profile-info:hover .profile-sub {
+    display: block;
+}
+
+
+.step-section {
+  padding: 15px 0px;
+}
+
+.summary-details {
+  padding: 15px;
+  background: #fff;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.them-btn {
+  width: 100px;
+  border-radius: 0px;
+  background: #16A086;
+  color: #fff;
+
+}
+
+.them-btn1 {
+  width: 100px;
+  border-radius: 0px;
+  background: #fff;
+  color:#16A086;
+}
+
+.summary-content {
+  display:none;
+}
+
+.add-summary {
+  text-align:center;
+  margin:0px;
+  background-color:#eee;
+  cursor: pointer;
+}
+
+.add-position {
+  padding:5px;
+  background:silver;
+  text-align:center;
+  margin:0px; 
+  cursor:pointer;
+  font-size:15px; 
+
+}
+
+.view-more {
+  text-align: center;
+  cursor: pointer;
+}
+
+.sum-content {
+  background:#fff;
+  padding-bottom: 16px;
+  padding-top: 5px;
+}
+
+.sum-content-sub {
+  margin-top: 10px;
+  box-shadow: 3px 6px 5px #888888;                
+}
+
+.add-lang {
+  text-align:center;
+  margin:0px;
+  background-color:#eee;
+}
+.view-more-details {
+  display: none;
+}
+
+.view-title {
+  font-size: 17px;
+}
+
+.view-sub-title {
+  font-size: 13px;
+}
+
+.social-img-view{
+  height: 50px;
+  margin-left: 38px;
+}
+.social-icon-new{
+  margin-right: 5px;
+}
+/*edit profile*/
+.edit-profile {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 350px;
+}
+.follow-btn:focus{
+  text-decoration: none !important;
+}
+.new-edit-btn{
+  width: 60px !important;
+  background-color: #428bca !important;
+    border-color: #357ebd !important;
+    color: #fff !important;
+}
+.new-cancel-btn{
+ width: 60px !important; 
+ background-color: #fff !important;
+    border-color: #ccc !important;
+    color: #333 !important;
+}
+.new-edit-save-btn{
+  float: right;
+    margin-top: 35px;
+    width: 100px;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.bootstrap-select.btn-group .dropdown-menu.inner {
+  background-color: #000;
+}
+.search-skill{
+  margin-bottom: 10px;
+}
+
+/*profile strength css*/
+.fill {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  height: 0px;
+  width: 90px;
+  background-color: rgb(47, 156, 225);
+}
+.mask {
+  display: block;
+  height: 90px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 90px;
+  overflow:hidden;
+}
+    
+.fill:before{
+  width: 150px;
+  height: 1px;
+  background: silver  ;
+  display: inline-block;
+  position: absolute;
+  right: -140px;
+  z-index: 999;
+  text-align: right;
+  vertical-align: top;
+}
+
+#demo-1 {
+  height: 90px;
+}
+
+
+/* Change user password page */
+
+.panel-login {
+  border-color: #ccc;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login>.panel-heading {
+  color: #00415d;
+  background-color: #fff;
+  border-color: #fff;
+  text-align:center;
+}
+.panel-login>.panel-heading a{
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+  color: #029f5b;
+  font-size: 18px;
+}
+.panel-login>.panel-heading hr{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  clear: both;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+  background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+  background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+  outline:none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+.btn-login {
+  background-color: #59B2E0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+  color: #fff;
+  background-color: #53A3CD;
+  border-color: #53A3CD;
+}
+
+.forgot-password:hover,
+.forgot-password:focus {
+  text-decoration: underline;
+  color: #666;
+}

@@ -1,0 +1,36 @@
+<nav-sub> 
+  <a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>
+  <ul class="menu menu-align">
+    <li><a href="#">Home</a>
+    <li><a href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a href="#">Edit profile</a></li>
+        <li><a href="#">Who's viewed profile</a></li>
+        <li><a href="#">Your Updates</a></li>
+
+      </ul>
+    </li>
+    <li><a  href="#"></i> My Network</a>
+      <ul class="sub-menu">
+        <li><a href="#">Conection</a></li>
+        <li><a href="#">Add contacts</a></li>
+        <li><a href="#">People you may Know</a></li>
+        <li><a href="#">Find alumni</a></li>
+      </ul>
+    </li>
+    <li><a  href="#"> Athlete List</a></li>
+    <li><a  href="#">Recent Activity</a>
+      <ul class="sub-menu">
+        <li><a href="#">Talent solutios</a></li>
+        <li><a href="#">Advertise</a></li>
+      </ul>
+    </li>
+    <li><a  href="#"><%= current_user.user_plan.try(:plan).try(:name) ? current_user.user_plan.try(:plan).try(:name) : "Try Premium" %></a>
+      <ul class="sub-menu">
+        <% @plans.each do |p| %>
+          <li><%= link_to p.name, payment_option_page_path(p) %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</nav-sub>

@@ -1,0 +1,16 @@
+<div class="video-details">
+	<div class="add-video-details" style="padding:15px;background:#fff;" >
+		<%= form_for :uservideo, url: upload_video_path, :html => {:id => "userVideoForm"} do |f| %>
+			<fieldset class="form-group">
+				<label for="formGroupExampleInput">Upload Video</label>
+				<%= f.file_field :user_video, class: "form-control" %>
+			</fieldset>
+			<fieldset class="form-group">
+				<button class="submit_btn btn btn-primary" type="submit" id="career_submit_form" >Save</button>
+			</fieldset>
+		<%end%>
+		<fieldset class="form-group">
+			<button class="btn btn-default cancel-btn">Cancel</button> 
+		</fieldset>
+	</div>
+</div>

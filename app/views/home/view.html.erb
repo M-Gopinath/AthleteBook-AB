@@ -1,0 +1,397 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="search-container">
+        <ul class="user_search_data"></ul>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div> 
+
+<div class="container section-allign-top">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="profile">
+        <div class="row">
+          <div class="col-md-8 profile-image">
+            <img src="/assets/home_profile.png" class="home-profile-img">
+             <p class="profile-name"><%= current_user.first_name.present? ? current_user.first_name : "First Name Empty" %></p>
+             <p class="profile-name"><%= current_user.user_profile.try(:sports_name) ? current_user.user_profile.try(:sports_name) : "Sports Name Empty" %></p>
+             <p class="profile-name"><%= current_user.try(:gender) ? current_user.try(:gender) : "Gender Empty"%>, Age - <%#= ((Date.today - current_user.date_of_birth.utc.to_date) / 365.25).to_i%></p>
+             <p class="profile-name"><%= current_user.user_profile.try(:address) ? current_user.user_profile.try(:address) : "Address Empty" %></p>
+             <p class="profile-name"><%= current_user.user_profile.try(:college) ? current_user.user_profile.try(:college) : "College Empty" %></p>
+             <p class="profile-name"><%= current_user.user_profile.try(:exp) ? current_user.user_profile.try(:exp) : "Exp Empty" %></p>
+             <p><%= link_to 'Improve your profile', home_edit_profile_path, :class => 'btn btn-theme-colored'%><button class="btn btn-default" style="margin-left: 100px;">Post</button>
+               <button class="btn btn-primary">LIKED<span style="margin-left: 10px;"><i class="fa fa-heart"></i></span></button></p>
+          </div>
+          <div class="col-md-4 view-profile-status">
+            <p>5</p>
+            <span>people viwed your profile in the past 90m days</span>
+            <hr>
+            <p>5</p>
+            <span>Connection Grow you net work</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 home-mar-top">
+        <div class="row">
+          <div class="col-md-4 menu-item">
+            <p><i class="fa fa-quote-left fa-3x fa-pull-left" style="font-size:1.4em;color:#16A086;"></i><span>Share Update </span></p>
+          </div>
+          <div class="col-md-4 menu-item file-item-click" style="padding: 13px;">
+            <label for="file-3"><i class="fa fa-pull-left fa-3x fa-image home-fa-icon" ></i> <span>Upload a photo </span></label>
+          </div>
+          <div class="col-md-4 menu-item"><p><i class="fa fa-pull-left fa-3x  fa-pencil-square-o home-fa-icon"></i><a>Write an Article</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 file-menu-items">
+        <div class="row" style="background:#fff; padding: 25px 3px;">
+          <div class="col-md-6 file-upload-menu">
+            <%= render "albums/album_new" %>
+          </div>
+          <div class="col-md-6 file-upload-menu">
+            <%= render "albums/picture_new" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 nd-hide-div home-mar-top">`
+        <div class="row">
+          <div class="col-md-2 menu-item1">
+            <p>
+              <img src="/assets/profile 1.png">
+            </p>
+          </div>
+          <div class="col-md-10 menu-item1 ">
+            <p class="pull-right"><span id='close'>x</span></p>
+            <p class="allign-top"><b>Welcom to <span><%= current_user.first_name%></span></b></p>
+            <p>Get started by adding your email address.</p>
+            <p><input type="text" name="email" placeholder="Email" style="font-size:15px;text-indent:5px;width:100%;"></p>
+            <p>
+              <button class="btn btn-theme-colored">continue</button>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 home-mar-top">
+        <div class="row">
+          <div class="col-md-2 menu-item1">
+            <p>
+              <img src="/assets/profile2.png" style="width:80px;">
+            </p>
+          </div>
+          <div class="col-md-10 menu-item1">
+            <p class="allign-top">sports_message.title
+              <a class="btn change-text pull-right btn-xs" href="#"> <span>Follow</span></a>
+            </p>
+            <div class="side-article">
+              <img src="/assets/profile2.png">
+              <div class="inner-article">
+                  <p>people viwed your profile in the past 90m days</p>
+                  <p class="limit-social-mess">
+                    Jack Welch on LinkedInBy Jack and Suzy Welch There are a good many of them, to be sure – but "delivering the budget" has got to be one of the most univ…
+                  </p>
+              </div>
+            </div>
+            <div class="home-mar-top">
+              <ul class="list-inline">
+                <li>
+                  <a href="#">Like </a>
+                </li>
+                <li>
+                  <a href="#">Comment</a>
+                </li>
+                <li>
+                  <a href="#">Share</a>
+                </li>
+                <li>
+                  <a href="#"> <span><i class="fa fa-thumbs-o-up"></i></span>839</a>
+                </li>
+                <li>
+                  <a href="#"><span><i class="fa fa-comment-o"></i></span>60</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10 menu-item3">
+            <p>show provious comment</p>
+            <div class="side-article1">
+              <img src="/assets/profile 1.png">
+              <p>Malinda Hollaway First User</p>
+              <p><span>Like</span> <span>Replay</span></p>
+              <div class="isvisible animate-show">
+                <div class="form-group replay-form">
+                  <textarea class="form-control" rows="1" id="comment" placeholder="Replay this comment" ></textarea>
+                  <button class="btn btn-default share-btn btn-xs">Replay</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" name="comment" placeholder="Add a comment" style="width:100%; margin-bottom:10px;">
+              <p>
+                <button class="btn btn-theme-colored ">Comment</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="member-info">
+            <p class="member-info-title">People you may know</p>
+            <div ng-repeat="member in member_informs" id="div2" >
+              <img src="/assets/pro.png">
+              <p> member name show here</p>
+              <p> sports information</p>
+              <p>connect<span>*</span> <span class="skip-member">skip</span></p>
+              <br> 
+            </div> 
+            <div ng-repeat="member in member_informs" id="div2" >
+              <img src="/assets/pro.png">
+              <p> member name show here</p>
+              <p> sports information</p>
+              <p>connect<span>*</span> <span class="skip-member">skip</span></p>
+              <br> 
+            </div> 
+          </div>
+        </div>
+
+        <div class="col-md-12 home-mar-top">
+          <div class="member-info">
+            <p>
+              <img src="/assets/profile 1.png" >
+              <p><a class="btn-link">Prabhakaran rex ibz</a></p>
+              <p>Developers: Receive FREE reports on Global IT from exclusive member network </p>
+            </p>
+            <p>
+              <img src="/assets/profile 1.png" >
+              <p>Prabhakaran rex ibz</p>
+              <p>Developers: Receive FREE reports on Global IT from exclusive member network </p>
+            </p>
+            <p>
+              <img src="/assets/profile 1.png">
+              <p>Prabhakaran rex ibz</p>
+              <p>Developers: Receive FREE reports on Global IT from exclusive member network </p>
+            </p>
+            <div class="det-pro">
+              <ul class="list-inline">
+                <li>About</li>
+                <li> Help</li>
+                <li>Feedback</li>
+                <li>Privacy & Terms <span>cart</span> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="col-md-12 ">
+        <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-10 about-description">
+            <h3>ABOUT DESCRIPTION</h3>
+            <p><%= truncate(current_user.user_profile.try(:description), length:100)%></p>
+         </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10 about-description">
+            <h3>SOCIAL MEADIA POWER</h3>
+            <div class="aa-footer-top-area">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget panel panel-success">
+                  <p>Instagram</p>
+                  <img class="social-img-view" src="/assets/social1.jpg">
+                  <p><span><i class="fa fa-heart-o social-icon-new"></i></span><a href="">Like -20</a></p>
+                  <p><span><i class="fa fa-plus social-icon-new"></i></span><a href="">Follows -15</a></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget panel panel-success">
+                    <p>Facebook</p>
+                    <img class="social-img-view" src="/assets/social2.jpg">
+                    <p><span><i class="fa fa-heart-o social-icon-new"></i></span><a href="">Like -320</a></p>
+                    <p><span><i class="fa fa-plus social-icon-new"></i></span><a href="">Follows -20</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget panel panel-success">
+                    <p>Pinterest</p>
+                    <img class="social-img-view" src="/assets/social3.jpg">
+                    <p><span><i class="fa fa-heart-o social-icon-new"></i></span><a href="">Like -40</a></p>
+                    <p><span><i class="fa fa-plus social-icon-new"></i></span><a href="">Follows -12</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="aa-footer-widget">
+                  <div class="aa-footer-widget panel panel-success">
+                    <p>Google</p>
+                    <img class="social-img-view" src="/assets/social4.jpg">
+                    <p><span><i class="fa fa-heart-o social-icon-new"></i></span><a href="">Like -10</a></p>
+                    <p><span><i class="fa fa-plus social-icon-new"></i></span><a href="">Follows -8</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+       <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10 about-description">
+            <h3><span>Videos</span>
+            <div class="row">
+              <% @uservideos.each do |uservideo|%>
+                <div class="col-md-6" style="padding:0px;">
+                  <%= video_tag uservideo.user_video, :size => "240x200", :controls => true, style: "border: solid; border-color: skyblue;margin-bottom: 20px;margin-top: 10px;margin-left: 37px;" %>
+                </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10 tropy-description">
+            <h3>CAREER</h3>
+            <div class="row" >
+             <% @career_all.each do |c| %>
+                <div class="col-md-3">
+                  <div class="folow-item">
+                    <p><img  src ="<%= c.career_file.url%>"><p>
+                    <p><%=c.carrer_name%></p>
+                    <p><%=c.year%></p>
+                    <p><%=c.description%></p>
+                  </div>
+                </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 home-mar-top">
+      <div class="row">
+        <div class="display-tropy-details">
+          <div class="col-md-12">
+            <div class="tropy-details">
+              <p class="tropy-details-title">2010 Best Award</p>
+              <div class="award-info">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe perferendis eveniet odio, ea. Architecto, nulla quis laboriosam voluptatibus dolorum  </p>
+              </div>
+                <div class="award-info">
+                <img src="/assets/tropy1.png" style="float:left">
+                <p>Type of sports</p>
+                <p>Year of wining </p>
+                <p>Name of player</p>
+                <p><span><i class="fa fa-star-o"></i></span><span><i class="fa fa-star-half-o"></i></span><span><i class="fa fa-star-half-empty"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10 company-description">
+            <h3>SPONSORS</h3>
+            <div class="row" >
+              <%@sponsors.each do |f| %>
+                <div class="col-md-3">
+                  <div class="folow-item">
+                     <p><% company = User.find_by(id: f.company_id)%></p>
+                     <p> <img src="<%= company.company_logo.url%>"></p>
+                      <p><%= company.company_name %></p>
+                  </div>
+                </div>
+              <%end%>
+            </div>
+            <div class="col-md-3">
+                <img src="/assets/logo.jpg">
+              </div>
+              <div class="col-md-3">
+                <img src="/assets/logo.jpg">
+              </div>
+              <div class="col-md-3">
+                <img src="/assets/logo3.jpg">
+              </div>
+              <div class="col-md-3">
+                <img src="/assets/logo4.jpg">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".file-item-click").click(function(){
+      $(".file-menu-items").show("slow");
+    });
+
+    $(".upload-cancel-btn").click(function(){
+      $(".file-menu-items").hide("slow");
+    });
+  });
+</script>
+

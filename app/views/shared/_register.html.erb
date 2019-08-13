@@ -1,0 +1,140 @@
+<%= form_for :user, url: home_create_path, :html => {id: "newRegistration"}, remote: true, method: :post do |f| %>
+  <%= devise_error_messages! %>
+  <fieldset>
+    <div style="text-align: center;margin-top: 30px;">
+      <p style="font-size: 15px;">Get started - it's free.</p>
+      <div class="error-msg">
+        <% if flash[:error] %>
+          <% flash[:error].each do |error| %>
+            <li>
+              <%= error %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-12 control-label">Account Type</label>
+      <div class="col-lg-12">
+        <%=f.select :role_id, Role.where.not(name: 'admin').collect{|r| [r.name, r.id] } ,{},class: "form-control select-option login-type",name:"user[role_id]" %>
+      </div>
+    </div>
+
+    <div class="athelet-form">
+      <div class="form-group">
+        <label class="col-lg-12 control-label">First name</label>
+        <div class="col-lg-12">
+          <%= f.text_field :first_name, :class => 'form-control',name:"user[first_name]"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Last name</label>
+        <div class="col-lg-12">
+          <%= f.text_field :last_name, :class => 'form-control',name:"user[last_name]" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Email</label>
+        <div class="col-lg-12">
+          <%= f.text_field :email, :class => 'form-control',name:"user[email]" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Password (6 or more characters)</label>
+        <div class="col-lg-12">
+          <%= f.password_field :password, :class => 'form-control',name:"user[password]"%>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="col-md-12">
+          <p class="disclosure-text">By clicking Join now, you agree to Itbeezone's <b>User Agreement,
+          Privacy Policy</b>, and <b>Cookie Policy</b>.</p>
+        </div>
+      </div>
+
+      <div class="control-group">
+         <div class="col-md-12">    
+            <%= f.submit 'Sign up', :class => 'join-btn large-them-btn'%>
+         </div>
+      </div>
+    </div>
+
+    <div class="team-form">
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Team name</label>
+        <div class="col-lg-12">
+         <%= f.text_field :first_name, :class => 'form-control',name:"user[first_name]" %>
+          <!-- <input type="text" id="teaname" name="teamname"  class="form-control input-lg" placeholder =  "TeamName"> -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Email</label>
+        <div class="col-lg-12">
+          <%= f.text_field :email, :class => 'form-control',name:"user[email]" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Password (6 or more characters)</label>
+        <div class="col-lg-12">
+          <%= f.password_field :password, :class => 'form-control',name:"user[password]"%>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="col-md-12">
+          <p class="disclosure-text">By clicking Join now, you agree to Itbeezone's <b>User Agreement,
+          Privacy Policy</b>, and <b>Cookie Policy</b>.</p>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="col-md-12">
+          <%= f.submit 'Sign up', :class => 'join-btn large-them-btn'%>
+        </div>
+      </div>
+    </div>
+    <div class="company-form">
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Company name</label>
+        <div class="col-lg-12">
+          <%= f.text_field :company_name, :class => 'form-control',name:"user[company_name]" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class=" control-label col-lg-12">Company logo</label>
+        <div class="col-lg-12">
+          <%= f.file_field :company_logo, :class => 'custom-file-input' %>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Email</label>
+        <div class="col-lg-12">
+          <%= f.text_field :email, :class => 'form-control',name:"user[email]" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-12 control-label">Password (6 or more characters)</label>
+        <div class="col-lg-12">
+          <%= f.password_field :password, :class => 'form-control',name:"user[password]"%>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="col-md-12">
+          <p class="disclosure-text">By clicking Join now, you agree to Itbeezone's <b>User Agreement,
+          Privacy Policy</b>, and <b>Cookie Policy</b>.</p>
+        </div>
+      </div>
+     <div class="control-group">
+        <div class="col-md-12">
+          <%= f.submit 'Sign up', :class => 'join-btn large-them-btn'%>
+        </div>
+     </div>
+    </div>
+  </fieldset>
+<% end %>

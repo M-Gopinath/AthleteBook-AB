@@ -1,0 +1,9 @@
+<% unless @career.valid? %>
+	<% @career.errors.full_messages.each do |error| %>
+		console.log('<%= error %>');
+		toastr.error('<%= error %>');
+	<%end%>
+<%else%>
+      toastr.success("career successfully updated");
+	location.reload();
+<%end%>

@@ -1,0 +1,29 @@
+<section id="forgot-password-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 " style="background-color: #EEE; padding:0px;">
+				<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {id: "forgotPasswordForm", method: :post }) do |f| %>
+					<fieldset>
+						<div style="text-align: center;">
+							<p style="background:silver;"><img src="/assets/text.png" style="width:50%;height:50px;"></p>
+						</div>
+						<div class="control-group forgot-title" style="margin-top:45px;">
+							<p><%= devise_error_messages!%></p>
+							<p>Change your password </p>
+							<p style="font-size:14px;">Let’s find your account</p>
+						</div>
+
+						<div class="control-group forgot-input-new">
+							<%= f.text_field :email, autofocus: true, :class => 'forgot-input-ins', :placeholder => 'Email Address', 'data-fv' => 'true', 'data-fv_type' => 'email', 'data-fv_err_msg' => 'Invalid Email Id' %>
+							<%= f.submit "continue", :class => 'forgot-btn' %>
+						</div>
+
+						<div class="control-group forgot-title">
+							<p style="margin-top:10px;"> <a href="#" class="link" style="font-size:14px;">I can’t access my account</p>
+						</div>
+
+					</fieldset>
+				<% end %>
+		</div> 
+	</div>
+</section>

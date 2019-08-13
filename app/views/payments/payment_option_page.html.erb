@@ -1,0 +1,100 @@
+<div class="container">
+	<div class="row">
+		<h1 align="center">You can pay one of these payment options.</h1>
+		<div class="col-xs-12 col-md-4" style="margin-top:5%;">
+			<div class="">
+				<img src="/assets/paypal.jpg" style="width:100%;height:90px;">
+				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align:center;margin-top:10px;">
+					<input type="hidden" name="cmd" value="_xclick">
+					<input type="hidden" name="business" value="seller201@yopmail.com">
+					<input type="hidden" name="lc" value="IN">
+					<input type="hidden" name="amount" value="<%= @plan.price%>">
+					<input type="hidden" name="currency_code" value="USD">
+					<input type="hidden" name="button_subtype" value="services">
+					<input type="hidden" name="no_note" value="0">
+					<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+					<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			</div>
+		</div>  
+		<!-- creditcard -->
+		<div class="col-xs-12 col-md-4" style="margin-top:5%;">
+			<%= form_tag stripe_payment_path, id: "stripeForm" do %>
+			<plan>
+				<label class="amount">
+					<span>Amount: <%= @plan.price %></span>
+				</label>
+				<%= hidden_field_tag "price", @plan.price %>
+				<%= hidden_field_tag "plan_id", @plan.id %>
+				<%= hidden_field_tag "stripe_publishable_key", Rails.application.secrets.stripe_publishable_key, class:"stripe_public_key" %>
+			</plan><br />
+			<button id="customStripePayment" type="button" class="btn btn-primary" data-price="<%= @plan.price %>" data-name="<%= @plan.name %>" data-description="<%= @plan.description %>">Pay with card</button>
+			<% end %>
+		</div>
+		<!-- stripe -->
+		<div class="col-xs-12 col-md-4" style="margin-top:9%;">
+			<!-- creditcard -->
+			<img src="/assets/cards.png" style="width:100%;height:90px;">
+			<div class="panel panel-default">
+				<%=form_tag payments_payment_charge_path, id:"creditcard_form" do  %>
+				<% if flash[:notice] %>
+				<div class="notice"><%= flash[:notice] %></div>
+				<% end %>
+				<div class="panel-heading">
+					<h3 class="panel-title"><img class="pull-right payment-image" src="/assets/payment.png">Payment Details</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<label>CARD TYPE</label>
+								<%= select_tag 'type', options_for_select([["Visa", "visa"], ["MasterCard", "master"],["American Express", "american_express"]]), prompt: "Select Card Type", class: "form-control" %>
+								
+								<label>CARD NUMBER</label>
+								<div class="form-group">
+									<%= text_field_tag :number,nil, placeholder: "Card Number", class: "form-control"%>
+								</div>
+							</div>                            
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-7 col-md-7">
+							<div class="form-group">
+								<label for="expMonth">EXPIRATION DATE</label>
+								<div class="col-xs-6 col-lg-6 pl-ziro">
+									<%= text_field_tag :month,nil, placeholder: "MM", class: "form-control"%>
+								</div>
+								<div class="col-xs-6 col-lg-6 pl-ziro">
+									<%= text_field_tag :year,nil, placeholder: "YYYY", class: "form-control" ,style: "padding:8px;"%>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-5 col-md-5 pull-right">
+							<div class="form-group">
+								<label for="cvCode">CV CODE</label>
+								<%=text_field_tag :verification_value,nil, placeholder: "CCV", class: "form-control" ,style:"padding:8px;"%>
+							</div>
+						</div>
+					</div>
+					<%=hidden_field_tag "price", @plan.price %>
+					<%=hidden_field_tag "plan_id", @plan.id %>
+					<div class="row">
+						<div class="col-xs-12 ">
+							<button class="submit_btn btn btn-primary" type="submit" id="creditcardPayment" style="float:left;">Submit</button>
+							<img src="/assets/ajax-loader.gif" class="gif-loader-img">
+
+							<!-- button type="button" class="subscribe btn btn-success btn-lg btn-block" value="submit">Start Subscription</button> -->
+						</div>
+					</div>
+					<div class="row" style="display:none;">
+						<div class="col-xs-12">
+							<p class="payment-errors"></p>
+						</div>
+					</div>
+				</div>
+				<%end%>
+			</div>
+		</div>     
+	</div>
+</div>

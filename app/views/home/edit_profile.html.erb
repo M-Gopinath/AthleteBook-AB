@@ -1,0 +1,874 @@
+<body>
+  <div ng-include=" 'views/blocks/profile_nav.html' "></div>
+  <div class="" id='clock'> 
+    <div class="edit-profile">
+      <div class="container">
+       <div class="row" >
+         <p class="edit-background-btn ">
+           <%= form_tag home_profile_update_path,remote:true,:data => { :type => :js } ,id:"upload_form" do  %>
+           <%=file_field_tag :cover_image ,id:"imgupload" , class:"imgupload hidden "  %>
+           <p class="edit-background-btn submit_btn" id="cover_image_upload"><button><span><i class="fa fa-pencil"></i></span >Edit Cover Image </button></p>
+
+           <%end%></p>
+         </div>
+
+         <div class="col-md-8">
+           <div class="col-md-12">
+            <div class="row">
+             <div class="guided-edit">
+              <div>
+               <p class="pull-right edit-close"><span id='close' class="guide-close">x</span></p>
+               <p class="guided-edit-title allign-top">Do you belong to any professional organizations or associations?</p>
+             </div> 
+             <input type="text" name="" placeholder="Organization Name" required>
+             <p class="edit-profile-btn">
+               <button class="btn btn-primary guide-close" ng-click="addGuide()">save</button>
+               <button class="btn btn-default guide-close" ng-click="skipGuide()">skip</button>
+             </p>
+           </div>
+         </div>
+       </div>
+       <div class="col-md-12">
+        <div class="row edit-profile-image" style="margin-top: 25px;">
+         <div class="col-md-4">
+          <img id = "my_image1" src ="<%= current_user.user_profile.try(:public_image).try(:url) ?  current_user.user_profile.try(:public_image).try(:url) : "" %>">
+          <!-- <span>Edit Profile Image</span> -->
+          <%= form_tag home_profile_update_path,:remote => true, :data => { :type => :js } ,id:"profileupload_form" do  %>
+          <%=file_field_tag :public_image ,id:"public_imgupload" , class:"imgupload hidden "  %>
+          <button class="submit_btn btn btn-primary" id="profileupload_pic" style="margin-top: 9px; padding: 10px;"><span>Edit Profile Image</span></button>
+          <%end%>
+        </div>
+        <div class="col-md-8">
+          <div class="edit-profile-info" style="margin-top:15px;">
+            <div class="profile-info">
+              <p style="margin:5px;color:#000;border-bottom: 1px solid #fff !important;"><%= current_user.first_name %></p>
+            </div>
+            <div class="profile-info">
+              <p style="margin:5px;color:#000;border-bottom: 1px solid #fff !important;"><%= current_user.last_name %></p>
+            </div>
+            <div class="profile-info">
+              <p style="margin:5px;color:#000;border-bottom: 1px solid #fff !important;"><%= current_user.gender.present? ? current_user.gender : "Gender Empty"%>, Age - <%#= ((Date.today - current_user.date_of_birth.utc.to_date) / 365.25).to_i%></p>
+            </div>
+            <div class="profile-info">
+              <p style="margin:5px;color:#000;border-bottom: 1px solid #fff !important;"><%= current_user.country_id %></p>
+            </div>
+          <!-- <div class="profile-info">
+            <a href="" editable-text="profile.exp" onbeforesave="updateUser($data, 'exp')" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Exprience"><%#= current_user.user_profile.exp%><span><i class="fa fa-pencil"></i></span></a>
+          </div> -->
+          <div class="profile-info">
+            <p><button class="view-btn">View profile<span class="caret"></span></button><span class="pull-right">5 connections</span></p>
+            <div class="profile-sub">
+             <a href="">View recent activity</a>
+             <a href="">Ask to be recommended</a>
+             <a href="">Create  profile in another language</a>
+             <a href="">Save to pdf</a>
+             <a href="">Manage public profile settings</a>
+           </div>
+         </div>
+         <div class="col-md-12">
+          <div class="pull-right">
+           <button class="btn btn-default">Post</button>
+           <button class="btn btn-primary">LIKED<span style="margin-left: 10px;"><i class="fa fa-heart"></i></span></button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+<div class="col-md-12">
+  <div class="row">
+   <div class="public-profile-info">
+    <p>Visible to your connections</p>
+    <div class="row">
+     <div class="col-md-6">
+      <div class="profile-item">
+        <label>Email</label><a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Email"><%= current_user.email %></a>
+      </div>
+      <div class="profile-item">
+       <label>Im</label><a href="" editable-text="profile.im" onbeforesave="updateUser($data, 'im')" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Im" ng-model="profile.im">{{ profile.im || 'Im' }} <span><i class="fa fa-pencil"></i></span></a>
+     </div>
+   </div>
+   <div class="col-md-6">
+    <div class="profile-item">
+     <label>Phone</label><a href="" editable-text="profile.phone" onbeforesave="updateUser($data,'phone')" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Phone"><%= current_user.try(:user_profile).try(:phone) %><span><i class="fa fa-pencil"></i></span></a>
+   </div>
+   <div class="profile-item">
+     <label>Address</label><a href="" editable-text="profile.address" onbeforesave="updateUser($da  ta, 'address')" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Address"><%= current_user.try(:user_profile).try(:address)%><span><i class="fa fa-pencil"></i></span></a>
+   </div>
+ </div>
+</div>
+<p>Visible to everyone on Sports</p>
+<div class="row">
+ <div class="col-md-6">
+  <div class="profile-item">
+    <label><i class="fa fa-twitter"></i></label><a href="" editable-text="profile.email.twitter" onbeforesave="updateUser($data)" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;"e-placeholder="Twitter">{{ profile.email.twitter || 'Twitter' }} <span><i class="fa fa-pencil"></i></span></a>
+  </div>
+  <div class="profile-item">
+    <label><i class="fa fa-wechat"></i></label><a href="" editable-text="profile.email.wechat" onbeforesave="updateUser($data)" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;"e-placeholder="Wechat">{{ profile.email.wechat || 'Wechat' }} <span><i class="fa fa-pencil"></i></span></a>
+  </div>
+  <div class="profile-item">
+    <label><i class="fa fa-globe"></i></label><a href="" editable-text="profile.email.website" onbeforesave="updateUser($data)" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Website">{{ profile.email.website || 'Website' }} <span><i class="fa fa-pencil"></i></span></a>
+  </div>
+</div>
+<div class="col-md-6">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- About description -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">About Description<span class="pull-right add-description" style="cursor:pointer;font-size:15px"><span><i class="fa fa-plus"></i><button class=" btn btn-primary add-description">Add Description</button></p>
+    <div class="career-details">
+      <div class="add-description-details" style="padding:15px;background:#fff;" >
+        <%= form_tag home_profile_update_path,remote:true ,id:"description_update"  do %>
+        <fieldset class="form-group">
+          <label for="formGroupExampleInput">Description</label>
+          <%=text_field_tag :description ,nil,class:"form-control"%>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <button class="submit_btn btn btn-primary" type="submit" id="description_update" >Update</button>
+        </fieldset>
+        <%end%>
+        <fieldset class="form-group">
+          <button class="btn btn-default description-cancel-btn">Cancel</button> 
+        </fieldset>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="col-md-12" style="padding:15px;background-color:#fff;">
+  <div class="row" >
+    <div class="experience-details">
+      <p style="margin-left:10px;"><%= truncate(current_user.try(:user_profile).try(:description), length:100)%></p>
+    </div>
+  </div>
+</div>
+<!-- About description end -->
+
+<!-- social media power -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">Social Media Power</p>
+    <div class="skill-details">
+      <div class="experience-details" style="padding:15px;background:#fff;" >
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="aa-footer-widget panel panel-success">
+              <p>Instagram</p>
+              <p><%= link_to "Sign in with Instagram", "/auth/instagram" %></p>
+              <img class="social-img-edit" src="/assets/social1.jpg">
+              <p><span><i class="fa fa-heart-o social-icon-new"></i></span><a href="">Like -20</a></p>
+              <p><span><i class="fa fa-plus social-icon-new"></i></span><a href="">Follows -15</a></p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="aa-footer-widget">
+              <div class="aa-footer-widget panel panel-success">
+                <p>Facebook</p>
+                <p><%= link_to "Sign in with Facebook", "/auth/facebook" %></p>
+                <%#= link_to '/auth/facebook' do %>
+                  <img class="social-img-edit" src="/assets/social2.jpg">
+                <%# end %>
+                <p><span><i class="fa fa-heart-o social-icon-new"></i></span><a href="">Like -<%= @likes %></a></p>
+                <p><span><i class="fa fa-plus social-icon-new"></i></span><a href="">Follows -<%= @invitable_friends %></a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="aa-footer-widget">
+              <div class="aa-footer-widget panel panel-success">
+                <p>Pinterest</p>
+                <p><%= link_to "Sign in with Pinterest", "/auth/pinterest" %></p>
+                <img class="social-img-edit" src="/assets/social3.jpg">
+                <p><span><i class="fa fa-heart-o social-icon-new"></i></span><a href="">Like -40</a></p>
+                <p><span><i class="fa fa-plus social-icon-new"></i></span><a href="">Follows -12</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="aa-footer-widget">
+              <div class="aa-footer-widget panel panel-success">
+                <p>Google</p>
+                <p><%= link_to "Sign in with Google", "/auth/google" %></p>
+                <img class="social-img-edit" src="/assets/social4.jpg">
+                <p><span><i class="fa fa-heart-o social-icon-new"></i></span><a href="">Like -10</a></p>
+                <p><span><i class="fa fa-plus social-icon-new"></i></span><a href="">Follows -8</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>
+
+<!-- User's videos -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">VIDEOS<span class="pull-right add-video" style="cursor:pointer;font-size:15px"><span><i class="fa fa-plus"></i><button class=" btn btn-primary add-video">Add videos</button></p>
+    <%# render 'home/user_videos' %>
+    <%= render "user_videos/add_videos" %>
+  </div>
+</div>
+
+<div class="col-md-12" style="padding:15px;background-color:#fff;">
+ <div class="row">
+  <% @uservideos.each do |uservideo|%>
+  <div class="col-md-4" style="padding:0px;">
+    <%= video_tag uservideo.user_video, :size => "240x200", :controls => true, style: "border: solid; border-color: skyblue;margin-bottom: 20px;margin-top: 10px;" %>
+    <p><%= link_to "Remove Video", remove_video_path(uservideo), class:"btn btn-danger", style: "position: absolute;margin-left: 60px;margin-top: -20px;", method: :delete,
+      data: {confirm: 'Are you sure?'} %></p>
+    </div>
+    <%end%>
+  </div>
+</div>
+
+<!-- User's video -->
+
+<!-- Career end -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">CAREER<span class="pull-right add-career" style="cursor:pointer;font-size:15px"><span><i class="fa fa-plus"></i><button class=" btn btn-primary add-career">Add Career</button></p>
+    <%= render "careers/add_career" %>
+  </div>
+</div>
+
+<div class="col-md-12" id="edit_form_update" style="padding:15px;background-color:#fff;">
+  <div class="row">
+    <div class="career-details">
+    </div>
+  </div>
+</div>
+<div class="col-md-12" style="padding:15px;background-color:#fff;">
+  <div class="row" >
+    <% @career_all.each do |c| %>
+    <div class="col-md-3">
+      <div class="folow-item">
+        <p><img  src ="<%= c.career_file.url%>"><p>
+          <p><%=c.carrer_name%></p>
+          <p><%=c.year%></p>
+          <p><%=c.description%></p>
+        </div>
+        <%#=link_to "Edit",style:"color:blue" ,id:"career_edit_button"%>
+        <button class="btn btn-primary edu-cancel-btn" data-id="<%=c.id%>" type="button" id= "career_edit_button">Edit</button>
+        <%#=link_to "Edit",career_edit_path(c),style:"color:blue" ,id:"career_edit_button"%>
+        <%= link_to 'Destroy',career_destroy_path(c),method: :delete,
+        data: { confirm: 'Are you sure?' },class:"btn btn-danger"%>
+      </div>
+      <%end%>
+    </div>
+  </div>
+
+
+  <!-- Sponsors -->
+
+
+  <div class="col-md-12" style="margin-top:10px;">
+    <div class="row">
+      <p class="pro-title">Sponsors<span class="pull-right add-sponsors" style="cursor:pointer;font-size:15px"><span><i class="fa fa-plus"></i><button class=" btn btn-primary add-sponsors">Add Sponsors</button></p>
+      <%= render "sponsors/sponsor_form" %>
+    </div>
+  </div>
+
+  <div class="col-md-12" id="sponsor_edit_form" style="padding:15px;background-color:#fff;">
+    <div class="row">
+     <div class="sponsor-details">
+     </div>
+   </div>
+ </div>
+
+ <div class="col-md-12" style="padding:15px;background-color:#fff;">
+  <div class="row" >
+   <%@sponsors.each do |f| %>
+   <div class="col-md-3">
+    <div class="folow-item">
+     <p><% company = User.find_by(id: f.company_id)%></p>
+     <p> <img src="<%= company.company_logo.url%>"></p>
+     <p><%= company.company_name %></p>
+   </div>
+   <button class="btn btn-primary edu-cancel-btn" data-id="<%=f.id%>" type="button" id= "sponsors_edit_button">Edit</button>
+   <%= link_to 'Destroy', sponsor_destroy_path(f),
+   method: :delete,
+   data: { confirm: 'Are you sure?' } ,class:"btn btn-danger"%>
+ </div>
+ <%end%>
+</div>
+</div>
+
+
+<!-- Sponsors end -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">Experience<span class="pull-right add-position" style="cursor:pointer"><span><i class="fa fa-plus"></i></span>Add position</span></p>
+    <div class="skill-details">
+      <div class="experience-details" ng-repeat="experience in experiences" style="padding:15px;background:#fff;" >
+       <% @experiences_all.each do |e| %>
+       <p><%=e.skills%></p>
+       <p><%=e.club_name%></p>
+       <p><%=e.location%></p>
+       <p><%=e.time_perid%></p>
+       <ul class="inline" style="margin-left:-14px;">
+        <li><%=e.description%></li>
+      </ul>
+      <%end%>
+      <ul class="list-inline media-info">
+        <li><a href="">Add Media:</a></li>
+        <li><span><i class="fa fa-file"></i></span><a href="">Document</a></li>
+        <li><span><i class="fa fa-file-image-o"></i></span><a href="">Photo</a></li>
+        <li><span><i class="fa fa-external-link"></i></span><a href="">Link</a></li>
+        <li><span><i class="fa fa-film"></i></span><a href="">Video</a></li>
+        <li><span><i class="fa fa-file-powerpoint-o"></i></span><a href="">Presentation</a></li>
+      </ul>
+    </div>
+    <p class="add-position">Add position</p>
+  </div>
+  <div class="add-skill-details" style="background:#eee;padding:10px;display:none">
+    <%= form_tag  home_add_experiences_path ,name:"experience" do  %>
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput">Skills</label>
+      <%=text_field_tag :skills ,nil,class:"form-control", name: "experience[skills]"%>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput2">Club Name</label>
+      <%=text_field_tag :club_name ,nil,class:"form-control", name: "experience[club_name]"%>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput2">Location</label>
+      <%=text_field_tag :location ,nil,class:"form-control", name: "experience[location]"%>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput2">Time period</label>
+      <%=text_field_tag :time_perid ,nil,class:"form-control", name: "experience[time_perid]"%>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="exampleTextarea">Description</label>
+      <%=text_area_tag :description ,nil,class:"form-control", name: "experience[description]"%>
+    </fieldset>
+    <%=hidden_field_tag :user_id, value:current_user.id%>
+    <span>See example</span>
+    <fieldset class="form-group">
+      <button class="btn btn-primary edu-cancel-btn   " type="submit" ng-disabled="educationForm.$invalid" >Save</button>
+    </fieldset>
+    <%end%>
+    <fieldset class="form-group">
+     <button class="btn btn-default cancel-btn">Cancel</button> 
+   </fieldset>
+
+ </div>
+</div>
+</div>
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+   <p class="pro-title">Education<span class="pull-right add-education" style="cursor:pointer;font-size:15px"><span><i class="fa fa-plus"></i></span>Add Education</span></p>
+   <div class="edu-details">
+     <% @educations_all.each do |e| %>
+     <div class="education-details">
+      <p><%= e.education_type.name%></p>
+      <p><%= e.institution.name%></p>
+      <p><%= e.course_of_study%></p>
+      <p><%= e.period %></p>
+      <p><%= e.activities %><span><i class="fa fa-question-circle"></i></span></p>
+      <p><%= e.descripition %><span><i class="fa fa-question-circle"></i></span></p>
+    </div> 
+    <% end%>
+    <p class="edu-add-position add-education">Add Education</p>
+  </div>
+  <div class="add-edu-details" style="padding:15px;">
+   <%= form_tag  home_add_education_path ,id:"educationForm",name:"education" do  %>
+   <fieldset class="form-group">
+     <label for="formGroupExampleInput">Institution</label>
+     <%= select_tag :institution_id , options_for_select(Institution.all.collect{ |c| [c.name, c.id] }),prompt: "Select Institution",class:"form-control", name: "education[institution_id]"%>
+   </fieldset>
+   <fieldset class="form-group">
+    <label for="formGroupExampleInput2">Time period</label>
+    <%=text_field_tag :period ,nil,class:"form-control", name: "education[period]"%>
+  </fieldset>
+  <fieldset class="form-group">
+   <label for="exampleSelect1"> Education</label>.
+   <%= select_tag :education_type_id ,  options_for_select(EducationType.all.collect{ |c| [c.name, c.id] }),prompt: "Select Education",class:"form-control",name: "education[education_type_id]"%>
+ </fieldset>
+ <fieldset class="form-group">
+  <label for="formGroupExampleInput2">Course of Study</label>
+  <%=text_field_tag :course_of_study ,nil,class:"form-control", name: "education[course_of_study]"%>
+</fieldset>
+
+<fieldset class="form-group">
+  <label for="exampleTextarea">Activities and Societies</label>
+  <%=text_area_tag :activities ,nil,class:"form-control", name: "education[activities]"%>
+</fieldset>
+
+<fieldset class="form-group">
+  <label for="exampleTextarea">Description</label>
+  <%=text_area_tag :descripition ,nil,class:"form-control", name: "education[descripition]"%>
+</fieldset>
+<%=hidden_field_tag :user_id, value:current_user.id%>
+<span>See example</span>
+<fieldset class="form-group">
+  <button class="btn btn-primary edu-cancel-btn   " type="submit" ng-disabled="educationForm.$invalid" >Save</button>
+  <!--   <button class="sbtn btn-primary edu-cancel-btn" type="submit" ><span><i class="fa fa-pencil" ></i></span>Save</button> -->
+  <!--       <button class="btn btn-primary edu-cancel-btn" type="submit" ng-disabled="educationForm.$invalid" ng-click="addEducation()">Save</button> -->
+</fieldset>
+<%end%>
+<fieldset class="form-group">
+  <button class="btn btn-default edu-cancel-btn">Cancel</button>
+</fieldset>
+</div>
+</div>
+</div>
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+   <p class="pro-title">Skills & Endorsements<span class="pull-right sk-pos" style="cursor:pointer"><span><i class="fa fa-plus"></i></span>Add skill</span></p>
+   <div class="skill-details">
+    <div class="experience-details" style="padding:15px;background:#fff;" >
+     <p>kind of skills </p>
+     <div style="border: 1px solid;border-radius: 5px;">
+      <% @athlete_skills.each do |a| %>
+      <label style="border: 1px solid;margin-top: 5px;border-radius: 5px;margin-left: 13px;padding: 2px;text-indent: 10px;"><%= a.name %><span class="btn btn-default btn-mini" style="margin-left: 6px;text-indent: 0;"><%= link_to  home_edit_profile_path(id: a.id),
+       method: :delete,
+       data: { confirm: 'Are you sure?' } do %>
+       <i class="fa fa-close"></i>
+       <% end %>
+     </span></label>
+     <% end %>
+   </div>
+ </div>
+ <p class="add-skill sk-pos">Add Skill</p>
+</div>
+<div class="add-sk">
+  <p style="margin-left:0px;">Skills and Endorsements Settings</p>
+  <form>
+   <fieldset class="form-group">
+    <label for="formGroupExampleInput" style="margin-right:30px;">I want to be endorsed</label>
+    <label class="radio-inline">
+     <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Yes
+   </label>
+   <label class="radio-inline">
+     <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No
+   </label>
+ </fieldset>
+ <fieldset class="form-group">
+  <div class="checkbox">
+   <label>
+    <input type="checkbox" value="">
+    Include me in endorsement suggestions to my connections
+  </label>
+</div>
+<div class="checkbox">
+ <label>
+  <input type="checkbox" value="">
+  Show me suggestions to endorse my connections
+</label>
+</div>
+<div class="checkbox">
+ <label>
+  <input type="checkbox" value="">
+  Send me notifications via email when my connections endorse me
+</label>
+</div>
+</fieldset>
+<fieldset>
+
+  <div class="search-skill" style="width: 50%;">
+    <select class="form-control new-select-skill">
+      <% @skill_all.each do |skill|%>
+      <option style="color: #000 !important;" value="<%= skill.id %>"><%= skill.name %></option>
+      <% end %>
+    </select>
+    <button type="submit" class="btn btn-primary new-select-btn-skill" ng-click="addUserskill()">Add skill</button>
+  </div>
+
+  <div class="input-group">
+  </div>
+</fieldset>
+<fieldset>
+  <div style="border: 1px solid;border-radius: 5px;">
+    <% @athlete_skills.each do |a| %>
+    <label style="border: 1px solid;margin-top: 5px;border-radius: 5px;margin-left: 13px;padding: 2px;text-indent: 10px;"><%= a.name %><span class="btn btn-default btn-mini" style="margin-left: 6px;text-indent: 0;"><%= link_to  home_edit_profile_path(id: a.id),
+     method: :delete,
+     data: { confirm: 'Are you sure?' } do %>
+     <i class="fa fa-close"></i>
+     <% end %>
+   </span></label>
+   <% end %>
+ </div>
+</fieldset>
+<span>See example</span>
+<fieldset class="form-group">
+  <button class="btn btn-primary skl-cancel-btn" type="submit" ng-click="addSkill()">Save</button>
+  <button class="btn btn-default skl-cancel-btn">Cancel</button>
+</fieldset>
+</form>
+</div>
+</div>
+</div>
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row" style="padding:5px;background-color:#fff;">
+   <p class="pro-title">Following</p>
+   <div class="col-md-3">
+    <div class="folow-item">
+     <img src="/assets/news2.jpg">
+     <p>Football Trophy Secret Highlight 2015</p>
+     <p>20,388,610 <span>followers</span></p>
+     <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn" ng-click='followBtn()'>Follow</a></p>
+   </div>
+ </div>
+ <div class="col-md-3">
+  <div class="folow-item">
+   <img src="/assets/news3.jpg">
+   <p>Football Trophy Secret Highlight 2015</p>
+   <p>20,388,610 <span>followers</span></p>
+   <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+ </div>
+</div>
+<div class="col-md-3">
+  <div class="folow-item">
+   <img src="/assets/news4.jpg">
+   <p>Football Trophy Secret Highlight 2015</p>
+   <p>20,388,610 <span>followers</span></p>
+   <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+ </div>
+</div>
+<div class="col-md-3">
+  <div class="folow-item">
+   <img src="/assets/news2.jpg">
+   <p>Football Trophy Secret Highlight 2015</p>
+   <p>20,388,610 <span>followers</span></p>
+   <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+ </div>
+</div>
+<div class="col-md-3">
+  <div class="folow-item">
+   <img src="/assets/news3.jpg">
+   <p>Football Trophy Secret Highlight 2015</p>
+   <p>20,388,610 <span>followers</span></p>
+   <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+ </div>
+</div>
+<div class="col-md-3">
+  <div class="folow-item">
+   <img src="/assets/news4.jpg">
+   <p>Football Trophy Secret Highlight 2015</p>
+   <p>20,388,610 <span>followers</span></p>
+   <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+ </div>
+</div>
+<div class="col-md-3">
+  <div class="folow-item">
+   <img src="/assets/news.png">
+   <p>Football Trophy Secret Highlight 2015</p>
+   <p>20,388,610 <span>followers</span></p>
+   <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+ </div>
+</div>
+<div class="col-md-3">
+  <div class="folow-item">
+   <img src="/assets/news.png">
+   <p>Football Trophy Secret Highlight 2015</p>
+   <p>20,388,610 <span>followers</span></p>
+   <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4" style="margin-top:25px;">
+  <div class="col-md-12 edit-right-nav-bg">
+    <div class="edit-profile-right-nav" style="padding:5px;">
+      <p>Profile Strength</p>
+      <div style="position:relative;">
+        <div class="fill">
+        </div>
+        <img class="mask" src="/assets/pic_profile_strength_mask_90x90_v2.png"></img>
+      </div>
+      <canvas id="demo-1" style="demo">ddddd</canvas>
+      <hr>
+      <div class="details-nave">
+        <p>Sports © 2016</p>
+      </div>  
+      <div class="view-profile">
+        <p>Who’s Viewed Your Profile</p>
+        <P><a href=""><span>3 </span>Your profile has been viewed by 3 people in the past 90 days.</a></P>
+        <P><a href=""><span>10</span>Your rank for profile views improved by 10% in the past 15 days</a></P>
+        <p>
+         <button class="btn btn-default">More</button>
+       </p>
+     </div>
+
+     <div class="premium-link">
+      <p style="font-size:13px;padding:10px;text-align:center;background:silver;"><a href="">Sports<span>Unlock the full list with LinkedIn Premium</span></a> </p>
+    </div>
+  </div>
+</div>
+<div class="col-md-12 edit-right-nav-bg" style="margin-top:10px;">
+  <p>Notify your network?</p>
+  <div class="row">
+   <div class="col-md-8">
+    <p style="font-size:13px;"><span id="switch_status" style="margin-right:5px;">No,</span>publish an update to my network about my profile changes.</p>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group" id="toggle_event_editing">
+     <button type="button" class="btn btn-info locked_active" style="padding: 6px 8px;">Yes</button>
+     <button type="button" class="btn btn-default unlocked_inactive" style="padding: 6px 8px;">No</button>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- UPLOAD IMAGE -->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color:#000;">Edit Profile Image</h4>
+        </div>
+        <div class="modal-body">
+          <img src="/assets/no_image.jpg" class="preview" style="height:300px;width:300px;">
+        </div>
+        <div class="modal-footer">
+         <!--  <button type="button" class="btn btn-primary" ng-click="profileUpload()">Upload</button> -->
+         <button class="btn btn-primary" ng-click ="uploadFile()" data-dismiss="modal">Upload</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- myModalnew -->
+ <div class="modal fade" id="myModalnew" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="color:#000;">Edit Background Image</h4>
+      </div>
+      <div class="modal-body">
+        <img src="/assets/no_image.jpg" class="preview" style="height:300px;width:300px;">
+      </div>
+      <div class="modal-footer">
+       <!--  <button type="button" class="btn btn-primary" ng-click="profileUpload()">Upload</button> -->
+       <button class="btn btn-primary" ng-click = "uploadBackground()" data-dismiss="modal">Upload</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#close').on('click', function(e) { 
+      $('.close-div').remove(); 
+    });
+
+    $ ('.change-text').hover(function(){
+      $(this).text("Following 5h");
+    }, function() {
+      $(this).text("Follow");
+    });
+
+    $(".menu").hover(function(){
+      $('.display-tropy-details').fadeToggle();
+    });
+
+    $(document).ready(function(){
+      $(".contact-info").click(function(){
+        $(".public-profile-info").slideToggle( "slow" );
+      });
+      $(".contact-info-save").click(function(){
+        $(".public-profile-info").hide( "slow" );
+      });
+    });
+
+    $(document).ready(function(){
+      $(".add-position").click(function(){
+        $(".add-skill-details").show( "slow" );
+        $(".skill-details").hide( "slow" );
+      });
+      $(".cancel-btn").click(function(){
+        $(".add-skill-details").hide( "slow" );
+        $(".skill-details").show( "slow" );
+      });
+    });
+
+    $(document).ready(function(){
+      $(".add-video").click(function(){
+        $(".add-video-details").show("slow");
+      });
+
+      $(".cancel-btn").click(function(){
+        $(".add-video-details").hide("slow");
+      });
+    });
+
+    $(document).ready(function(){
+      $(".add-career").click(function(){
+        $(".add-career-details").show("slow");
+      });
+
+      $(".cancel-btn").click(function(){
+        $(".add-career-details").hide("slow");
+      });
+    });
+    
+    $(document).ready(function(){
+      $(".add-sponsors").click(function(){
+       $(".add-sponsors-details").show("slow");
+     });
+      $(".cancel-btn").click(function(){ 
+        $(".add-sponsors-details").hide("slow");
+      });
+    });
+
+
+    $(document).ready(function(){
+      $(".add-description").click(function(){
+        $(".add-description-details").show("slow");
+      });
+
+      $(".description-cancel-btn").click(function(){
+        $(".add-description-details").hide("slow");
+      });
+    });
+
+    $(document).ready(function(){
+      $(".add-education").click(function(){
+        $(".add-edu-details").show( "slow" );
+        $(".edu-details").hide( "slow" );
+      });
+      $(".edu-cancel-btn").click(function(){
+        $(".add-edu-details").hide( "slow" );
+        $(".edu-details").show( "slow" );
+      });
+    });
+
+
+    $(document).ready(function(){
+      $(".sk-pos").click(function(){
+        $(".add-sk").show( "slow" );
+        $(".skill-details").hide( "slow" );
+      });
+      $(".skl-cancel-btn").click(function(){
+        $(".add-sk").hide( "slow" );
+        $(".skill-details").show( "slow" );
+      });
+    });
+
+    $(document).ready(function(){
+      $(".add-summary ").click(function(){
+        $(".summary-content").show( "slow" );
+      });
+      $(".sum-cancel-btn").click(function(){
+        $(".summary-content").hide( "slow" );
+      });
+    });
+
+    $('.guide-close').click(function(){
+      $('.guided-edit').hide('slow');
+    });
+
+    $(document).ready(function(){
+     $(".view-more ").click(function(){
+      $(".view-more-details").show( "slow" );
+    });
+   });
+
+    $(document).ready(function(){
+      $(".follow-btn").click(function(){
+        var obj = $(this);
+        if( obj.data('Follow') ){
+          obj.data('Follow', false);
+          obj.html('Follow');
+        }
+        else{
+          obj.data('Follow', true);
+          obj.html('Following');
+        }
+      })
+    })
+
+    $('#toggle_event_editing button').click(function(){
+     if($(this).hasClass('locked_active') || $(this).hasClass('unlocked_inactive')){
+      /* code to do when unlocking */
+      $('#switch_status').html('Yes,');
+    }else{
+      /* code to do when locking */
+      $('#switch_status').html('No,');
+    }
+
+    /* reverse locking status */
+    $('#toggle_event_editing button').eq(0).toggleClass('locked_inactive locked_active btn-default btn-info');
+    $('#toggle_event_editing button').eq(1).toggleClass('unlocked_inactive unlocked_active btn-info btn-default');
+  });
+  });
+
+   //image upload change
+   $("document").ready(function(){
+    $("#upload").change(function() {
+      $('#myModal').modal('show'); 
+    });
+  });
+
+   $("document").ready(function(){
+    $("#uploadbackground").change(function() {
+      $('#myModalnew').modal('show'); 
+    });
+  });
+
+
+   function previewFile(){
+       var preview = document.querySelector('.preview'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+         preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+         } else {
+           preview.src = "";
+         }
+       }
+
+       previewFile();
+     </script>
+     <% if current_user.try(:user_profile).try(:cover_image).present? %>
+     <style type="text/css">
+       .edit-profile {
+        background-image: url(<%= current_user.user_profile.cover_image%>);
+      }
+    </style>
+    <% else %>
+    <style type="text/css">
+     .edit-profile {
+      background-image: url(/assets/background.jpg);
+    }
+  </style>
+  <% end %>
+
+
+

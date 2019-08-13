@@ -1,0 +1,722 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap.min
+ *= require bootstrap-datepicker
+ *= require bootstrapValidator
+ *= require profile
+ *= require bootstrap-editable
+ *= require home
+ *= require responsive
+ *= require smart_menu
+ *= require view_profile
+ *= require them
+ *= require bootstrap-dropdownhover.min
+ *= require animate.min
+ *= require index
+ *= require view_search
+ *= require_tree .
+
+ */
+/*signup page main css*/
+
+*,
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+label,
+fieldset,
+input,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section { display: block; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html { -webkit-font-smoothing: antialiased; }
+
+body,html {
+  background: #eee;
+  font-family: proxima-nova,Helvetica Neue,Helvetica,sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+p {
+  font-size: 20px;
+}
+
+p.small {
+  font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: proxima-nova,Helvetica Neue,Helvetica,sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#toast-container{
+  top: 70px;
+}
+
+.form-control {
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  color: #555;
+  display: block;
+  font-size: 14px !important;
+  height: 34px !important;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+}
+.folow-item a {
+  color:#000;
+}
+.text-center a {
+  color:#23527c;
+}
+.text-center a:hover {
+  color:#23527c;
+  text-decoration: none;
+}
+.col-1-5{
+  width: 20%;
+  float:left;
+  min-height: 1px;
+  position: relative;
+}
+.text-bold{
+  font-weight: bold;
+}
+.text-center a:focus {
+  color:#23527c;
+  text-decoration: none;
+}
+.aa-footer-top-area a{
+  color:#000;
+}
+.navbar-custom {
+  background: #2C3E50 !important;
+  font-family: proxima-nova,Helvetica Neue,Helvetica,sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: #2C3E50;
+}
+.navbar {
+  border: 1px solid #2C3E50 !important;
+  margin-bottom: 20px;
+  min-height: 50px;
+  position: relative;
+}
+.campare-btn{
+  bottom: 35px;
+  position: absolute;
+  right: 35px;
+  text-align: right;
+  z-index: 999;
+}
+.navbar-custom a:focus {
+  outline: none;
+}
+
+.editable-click, a.editable-click, a.editable-click:hover {
+  border-bottom: 1px dashed #fff;
+  color: #000;
+  text-decoration: none;
+}
+
+.editable-click, a.editable-click, a.editable-click {
+  border-bottom: 1px dashed #fff;
+  color: #000;
+  text-decoration: none;
+}
+.navbar-custom .navbar-brand {
+  color: white;
+}
+
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
+  color: white;
+}
+
+.navbar-custom .navbar-nav {
+  letter-spacing: 1px;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.navbar{
+  background: none repeat scroll 0 0 #2c3e50 !important;
+  color: #fff;
+  border-radius: 0 !important;
+}
+
+.food-info a{
+  color:#fff !important;
+}
+
+#contact{
+  margin-top: 0px;
+}
+
+.navbar-brand{
+  color: #fff !important;
+}
+
+.navbar-custom .navbar-nav li a {
+  color: white;
+}
+
+.navbar-custom .navbar-nav li a:hover {
+  color: #18BC9C;
+  outline: none;
+}
+
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:active {
+  color: white;
+}
+
+.navbar-custom .navbar-nav li.active a {
+  color: white;
+  background: #18BC9C;
+}
+
+.navbar-custom .navbar-nav li.active a:hover,
+.navbar-custom .navbar-nav li.active a:focus,
+.navbar-custom .navbar-nav li.active a:active {
+  color: white;
+  background: #18BC9C;
+}
+
+.navbar-custom .navbar-toggle {
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  border-color: white;
+}
+
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #18BC9C;
+  color: white;
+  border-color: #18BC9C;
+}
+
+@media (min-width: 768px) {
+  .navbar-custom {
+    padding: 7px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+  }
+
+  .navbar-custom .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .navbar-custom.affix {
+    padding: 10px 0;
+  }
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
+  }
+}
+
+section {
+  padding: 80px 0;
+}
+
+section h2 {
+  margin: 0;
+  font-size: 3em;
+}
+
+section.success {
+  background: #18BC9C;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding: 75px 0;
+  }
+  section.first {
+    padding-top: 75px;
+  }
+}
+
+footer {
+  color: white;
+}
+
+footer h3 {
+  margin-bottom: 30px;
+}
+
+footer .footer-above {
+  padding-top: 20px;
+  background-color: #333;;
+  padding-bottom: 60px
+}
+
+footer .footer-col {
+  margin-bottom: 50px;
+}
+
+footer .footer-below {
+  padding: 22px 0;
+  background-color: #202020;
+  padding-bottom: 12px;
+}
+
+.btn-theme-colored{
+  color:#fff !important;
+}
+
+
+/*signup page main css*/
+/*signup page css1*/
+
+.navbar{
+  margin-bottom: 0 !important;
+}
+
+.input-lg{
+  height: 37px;
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+
+.footer-above-input{
+  width: 235px;
+  height: 30px;
+  text-indent:12px;
+  font-size:12px;
+  margin-bottom:3px;
+  color:#000;
+  border:1px solid #696969;
+  border-radius:3px;
+}
+
+.select-option{
+  height: 37px;
+  border-radius: 0px;
+}
+
+.list-inline li,a{
+  color: #fff;
+}
+
+#contact{
+  background: url(/assets/sports1.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+@media screen and (max-width: 580px) {
+  .control-label{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-above-input{
+    width: 100%;
+  } 
+}
+
+/*signup page css1*/
+/*forget password*/
+
+#forgot-password-content{
+  background: url(/assets/sports1.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#page-top{
+  height:100%;
+}
+
+.footer-below a{
+  color: #fff !important;
+}
+
+#forgot-password-content {
+  height: 100%;
+}
+
+.forgot-title p {
+  text-align: center;
+}
+
+.forgot-input-new{
+  text-align: center
+}
+
+.forgot-input-ins{
+  width: 60%;
+  text-indent: 12px;
+  height: 37px;
+  border: 1px solid silver;
+}
+
+.forgot-btn {
+  height: 36px;
+  width: 100px;
+  border: 1px solid #4CAF50;
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.footer-fixed {
+  bottom:0px;
+  position: fixed;
+  width:100%;
+}
+
+.list-inline li a{
+  color: #fff;
+}
+
+.list-inline > li >  a {
+  color:#000;
+}
+
+.search {
+  border-radius: 0px !important;
+}
+
+.search-btn {
+  border-radius: 0px !important;
+}
+
+.navbar-material-blue {
+  border-color: #3f3f3f !important;
+  background-color: #3f3f3f !important;
+  background-image: -webkit-linear-gradient(top, #696969 0%,#3f3f3f 100%) !important;
+}
+
+
+.filter-dropdown-menu {
+  border-radius: 0px !important;
+}
+
+.member-dir > li >  a {
+  color: #fff !important;
+  font-size: 12px !important;
+}
+
+.member-dir-ul p {
+  color: #fff;
+}
+
+.error-msg {
+  background: red;
+  color: #fff;
+  text-align: left;
+  list-style-type: none;
+  text-indent: 10px;
+}
+
+.sponsors_data img {
+  width: 150px;
+}
+
+.add-career-details {
+  display:none;
+}
+.add-description-details {
+  display:none;
+}
+
+ .search-dropdown-menu li {
+  color: #000;
+  text-indent: 7px;
+  line-height: 30px;
+}
+
+.add-sponsors-details {
+  display:none;  
+}
+
+.add-video-details{
+  display:none;  
+}
+
+.gif-loader-img {
+  display: none;
+  float:left;
+  margin-left: 27px;
+}
+
+.form-control-feedback{
+  margin-right: 16px;
+}
+.ab-btn{
+  height: 28px;
+  border: 1px;
+  width:60px;
+  border-radius: 3px;
+  box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+  background-color:#b8e356;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #fff;
+}
+
+.ab-btn:hover {
+  background-color: #b8e356;
+  border-color: #b8e356;
+  box-shadow: 0 0 0 1px #83c41a;
+  color: #fff;
+  text-decoration: none;
+}
+.ab-password-ins{
+  width: 235px;
+  height: 30px;
+  margin-right: 10px;
+  text-indent:12px;
+  font-size:12px;
+  margin-bottom:3px;
+  color:#000 !important;
+  border:1px solid #696969;
+  border-radius: 3px;
+}
+.ab-email-ins{
+  width: 235px;
+  height: 30px;
+  margin-right: 10px;
+  text-indent:12px;
+  font-size:12px;
+  margin-bottom:3px;
+  color:#000;
+  border:1px solid #696969;
+  border-radius:3px;
+}
+.ab-forget-btn{
+	bottom: 2px;
+  position: absolute;
+  right: 208px;
+  top: 31px;
+  font-size: 12px;
+}
+
+.ab-forget-btn:hover{
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  text-decoration: none;
+  bottom: 2px;
+  position: absolute;
+  right: 183px;
+  top: 50px;
+}
+.ab-login-box{
+  margin-left: 200px;
+  margin-top: -17px;
+  width: 98%;
+}
+.ab-nav{
+	margin-top:-5px;
+  margin-top:9px;
+}
+.new-head{
+  border: 5px solid #000;
+  padding: 0px 0px;
+}
+.account-setting-title{
+  background:#000;
+}
+.social-img-edit {
+    height: 50px;
+    margin-left: 48px;
+}
+.skill-details a{
+  color: #000;
+}
+.search-dropdown-menu li:hover {
+  background-color: #696969;
+  color: #fff;
+}
+
+
+/*file upload menu*/
+.file-upload-menu {
+  background: #fff;
+}
+
+.file-menu-items {
+  display: none;
+}
+
+.md-12 {
+  padding:20px 135px;
+}
+
+.md-6 {
+  background-color: #EEE;
+  padding: 0px 10px;
+}
+
+.md-6 label {
+  font-weight: normal;
+  margin-bottom: 0px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #66696a;
+  margin-bottom: 2px;
+  z-index: 2;
+  -webkit-transition: top 250ms ease,opacity 250ms ease;
+  -moz-transition: top 250ms ease,opacity 250ms ease;
+  -o-transition: top 250ms ease,opacity 250ms ease;
+  transition: top 250ms ease,opacity 250ms ease;
+  display: block;
+  position: relative;
+  margin-top: 15px;
+}
+
+.disclosure-text {
+  font-size: 12px;
+  line-height: 14px;
+  color: #66696a;
+  margin-top: 12px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.large-them-btn {
+  box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+  background-color:#b8e356;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  border:1px solid #b8e356;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:15px;
+  font-weight:bold;
+  height: 35px;
+  width: 100%;
+  margin-bottom: 25px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #86ae47;
+}
+
+.large-them-btn:hover {
+  background-color: #b8e356;
+  border-color: #b8e356;
+  box-shadow: 0 0 0 1px #83c41a;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Choose file';
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.nav-login-header {
+  background: #202020 !important;
+}
+
+.footer-list-inline> li {
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.footer-below a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+}

@@ -1,0 +1,23 @@
+<div class="pic-details">
+<h6>create new photo</h6>
+	<div class="add-pic-details">
+		<%= form_for :picture ,url:albums_picture_create_path,remote:true do |f| %>
+		<fieldset class="form-group">
+			<label for="formGroupExampleInput"> Type of Album Name</label>
+			<%= f.select :album_id , options_for_select(Album.all.collect{ |c| [c.album_name, c.id] }),{prompt: "Select album name"},class:"form-control"%>
+		</fieldset>
+
+		<fieldset class="form-group">
+			<label for="formGroupExampleInput">Upload Picture</label>
+			<%= f.file_field :pic_upload, class: "form-control" %>
+		</fieldset>
+		<%#=hidden_field :user_id ,value:current_user.id%>
+		<fieldset class="form-group">
+			<button class="submit_btn btn btn-primary" type="submit" >Save</button>
+		</fieldset>
+		<%end%>
+		<fieldset class="form-group">
+			<button class="btn btn-default upload-cancel-btn">Cancel</button> 
+		</fieldset>
+	</div>
+</div>

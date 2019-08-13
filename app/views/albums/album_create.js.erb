@@ -1,0 +1,14 @@
+<%unless @album.valid?%>
+	<% @album.errors.full_messages.each do |error| %>
+		console.log('<%= error %>');
+		toastr.error('<%= error %>');
+	<%end%>
+<%else%>
+    toastr.success("album_name successfully created");
+	location.reload();
+<%end%>
+
+
+
+
+

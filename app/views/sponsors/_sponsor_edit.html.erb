@@ -1,0 +1,12 @@
+<%= form_for @sponsor,url:sponsor_update_path(@sponsor.id),remote:true ,id:"sponsor_update_from",method: :PUT  do |f| %>
+	<fieldset class="form-group">
+		<label for="exampleSelect1">Sponsors</label>.
+		<%=select_tag :company_id, options_for_select( User.where('role_id = ?', 3).map{ |a| [a.company_name,a.id]}),prompt: "Select Sponsor",class:"form-control"%>
+	</fieldset>
+	<fieldset class="form-group">
+		<button class="submit_btn btn btn-primary" type="submit" id="career_submit_form" >Update</button>
+	</fieldset>
+<%end%>
+    <fieldset class="form-group">
+      <button class="btn btn-default cancel-btn">Cancel</button> 
+    </fieldset>

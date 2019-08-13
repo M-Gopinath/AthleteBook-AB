@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plan_id: 
+  month: 1
+  cost: 1.5
+  description: MyText
+
+two:
+  plan_id: 
+  month: 1
+  cost: 1.5
+  description: MyText

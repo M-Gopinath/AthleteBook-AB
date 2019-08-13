@@ -1,0 +1,293 @@
+.advance-search-btn {
+	width: 100px;
+	background: #008CC9;
+	border-radius: 0px;
+	color:#fff;
+}
+.advance-search-title {
+	font-size: 15px;
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+.advance-search {
+	border-bottom: 1px solid silver;
+}
+
+.group-item {
+	border-bottom: 1px solid silver;
+}
+.relation-con p,.location-con p,.company-con p,.count-item p{
+	font-size: 15px;
+	margin-left:20px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+.relation-con,.location-con,.company-con,.count-item,.row-item {
+  border-bottom: 1px solid silver;
+
+}
+
+.row-item {
+	margin-top: 10px;
+}
+
+.row-item-title {
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 0px;
+}
+.row-item-sub {
+	font-size: 13px;
+	margin-top: -5px;
+
+}
+
+.save-search {
+	font-size: 15px;
+	cursor: pointer;
+}
+.search-img-responsive {
+	width: 70px;
+	border-radius: 43px;
+	float: left;
+	margin-right: 10px;
+  height: 70px;
+}
+
+.group-posts {
+	margin-left: 82px;
+}
+.group-posts p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.search-container {
+  position: absolute;
+  z-index: 2;
+  min-width: 88.5%;
+  height: 500px;
+  overflow: hidden;
+  background: #fff;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+  border: 3px solid #D6DBDF; 
+  border-bottom: 20px solid #D6DBDF;
+}
+
+.search-container p {
+	font-size: 15px;
+	margin-left: 50px;
+}
+
+.who-viewd-profile{
+	margin-top: 58px;
+  text-align: center;
+}
+
+.who-viewd-profile img{
+	width: 35px;
+}
+
+.advance-search-section {
+	padding: 10px;
+	background-color: #eee;
+	position: absolute;
+  z-index: 1;
+  width: 91.5%;
+  margin-top: 33px;
+  border: 5px solid #D6DBDF; 
+}
+
+.search-box {
+	border-right: 1px solid #D6DBDF;
+}
+
+.connection-box {
+	border-left: 1px solid #D6DBDF;
+}
+.group-item,.relation-con,.location-con,.company-con {
+	padding: 10px;
+}
+.save-search-box {
+	margin-top: 5px;
+	font-size: 13px;
+}
+
+.save-search-section{
+	padding: 10px;
+	background-color: #eee;
+	position: absolute;
+  z-index: 1;
+  width: 91.5%;
+  margin-top: 54px;
+  border: 5px solid #D6DBDF; 
+}
+
+.save-search-text {
+  padding-bottom: 20px;
+}
+
+.advance-search-item {
+	border-top: 1px solid #D6DBDF;
+}
+
+.advance-search-item p {
+	margin-top: 20px;
+	font-size: 15px;
+}
+
+.advance-search-title {
+	text-align: center;
+	font-size: 20px;
+} 
+
+
+.advance-search-section.ng-hide-add {
+  -webkit-animation:0.5s hide;
+  animation:0.5s hide;
+}
+
+@keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+
+.advance-search-section.ng-hide-remove {
+  -webkit-animation:0.3s show;
+  animation:0.3s show;
+}
+
+@keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+
+.save-search-section.ng-hide-add {
+  -webkit-animation:0.5s hide;
+  animation:0.5s hide;
+}
+
+@keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+
+.save-search-section.ng-hide-remove {
+  -webkit-animation:0.3s show;
+  animation:0.3s show;
+}
+
+@keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+.pagination {
+  z-index: -1;
+  position: relative;
+}
+
+.search-container {
+  display: none;
+}

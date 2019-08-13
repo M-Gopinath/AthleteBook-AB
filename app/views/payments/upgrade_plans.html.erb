@@ -1,0 +1,521 @@
+<body>
+	<div ng-include=" 'views/blocks/profile_nav.html' "></div>
+	<div class="premium-section">
+		<div class="container full-bg">
+			<div class="row premium-header-bg">
+				<div class="col-md-12">
+					<div class="col-md-2 col-sm-2 col-xs-6">
+						<div class="premium-image">
+							<img src="/assets/pro.png" class="img-responsive">
+						</div>
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-6 padd-decrease">
+						<div class="premium-head-title">
+							<p class="premium-title"><b>Hi welcome</b></p>
+							<p class="premium-sub-title">What do you want to achive with your free trail of Premium?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-top">
+				<% @plans.each do |plan| %>
+					<div class="col-md-3">
+						<div class="click-green">
+							<div class="panel-premium panel-head-bg panel-green">
+								<div class="panel-heading padding-panel-head text-center">
+									<p><i class="fa fa-suitcase" aria-hidden="true"></i></p>
+									<p>Land your dream jop</p>
+								</div>
+								<div class="panel-body body-chage-padding plan<%= plan.id%>">
+									<ul class="panel-li">
+									<% plans_schemes = plan.plans_desc%>
+										<% plans_schemes.each do |sceme|%>
+											<li><%= sceme%></li>
+										<%end%>
+									</ul>
+									<h1 align="center" ><%= plan.name%><%= plan.price %></h1>
+								</div>
+								<div class="panel-footer change-footer-padding">
+									<%= link_to "Select Plan", payment_option_page_path(plan), class:"btn btn-lg btn-block btn-danger select-plan-btn" %>
+								</div>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+			<div class="row align-top">
+				<div class="plan-green-section">
+					<div class="col-md-12">
+						<p class="jop-seeker-title">Job Seeker features</p>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan1-head">
+									<p class="plan-item-info"><i class="fa fa-envelope" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Direct messaging to recruiters</p>
+								<span>Reach out directly to any recruiter or job poster with 5 InMail credits</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan1-head">
+									<p class="plan-item-info"><i class="fa fa-eye" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Who's Viewed Your Profile</p>
+								<span>See who's viewed you in the last 90 days and how they found you</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan1-head">
+									<p class="plan-item-info"><i class="fa fa-search" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Featured Applicant</p>
+								<span>Move to the top of recruiters' applicant lists</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan1-head">
+									<p class="plan-item-info"><i class="fa fa-user" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Applicant Insights</p>
+								<span>See how you compare to other candidates</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-4">
+							<p class="sports-com">Sports.com, a Sports company</p>
+						</div>
+						<div class="col-md-8 sports-item-fm">
+							<p><span>Limited time offer</span><button>new</button></p>
+							<p>On-demand courses to advance your career</p>
+							<p>Master in-demand skills with full access to over 4,100 expert-led courses on Lynda.com, a LinkedIn company†</p>
+						</div>
+					</div>
+				</div>
+				<!-- ============================= -->
+				<div class="plan-blue-section">
+					<div class="col-md-12">
+						<p class="blue-jop-seeker-title">Business Plus features</p>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-blue-head">
+									<p class="plan-item-info"><i class="fa fa-envelope" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Direct messaging to recruiters</p>
+								<span>Reach out directly to any recruiter or job poster with 5 InMail credits</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-blue-head">
+									<p class="plan-item-info"><i class="fa fa-eye" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Who's Viewed Your Profile</p>
+								<span>See who's viewed you in the last 90 days and how they found you</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-blue-head">
+									<p class="plan-item-info"><i class="fa fa-search" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Featured Applicant</p>
+								<span>Move to the top of recruiters' applicant lists</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-blue-head">
+									<p class="plan-item-info"><i class="fa fa-user" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Applicant Insights</p>
+								<span>See how you compare to other candidates</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-4">
+							<p class="sports-com">Sports.com, a Sports company</p>
+						</div>
+						<div class="col-md-8 blue-sports-item-fm ">
+							<p><span>Limited time offer</span><button>new</button></p>
+							<p>On-demand courses to advance your career</p>
+							<p>Master in-demand skills with full access to over 4,100 expert-led courses on Lynda.com, a LinkedIn company†</p>
+						</div>
+					</div>
+				</div>
+				<!-- =============================-->
+				<!-- ============================= -->
+				<div class="plan-violet-section">
+					<div class="col-md-12">
+						<p class="violet-jop-seeker-title">Sales Navigator Professional features</p>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-violet-head ">
+									<p class="plan-item-info"><i class="fa fa-envelope" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Direct messaging to recruiters</p>
+								<span>Reach out directly to any recruiter or job poster with 5 InMail credits</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-violet-head ">
+									<p class="plan-item-info"><i class="fa fa-eye" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Who's Viewed Your Profile</p>
+								<span>See who's viewed you in the last 90 days and how they found you</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-violet-head ">
+									<p class="plan-item-info"><i class="fa fa-search" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Featured Applicant</p>
+								<span>Move to the top of recruiters' applicant lists</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-violet-head">
+									<p class="plan-item-info"><i class="fa fa-user" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Applicant Insights</p>
+								<span>See how you compare to other candidates</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-4">
+							<p class="sports-com">Sports.com, a Sports company</p>
+						</div>
+						<div class="col-md-8 violet-sports-item-fm col-xs-10">
+							<p><span>Limited time offer</span><button>new</button></p>
+							<p>On-demand courses to advance your career</p>
+							<p>Master in-demand skills with full access to over 4,100 expert-led courses on Lynda.com, a LinkedIn company†</p>
+						</div>
+					</div>
+				</div>
+				<!-- =============================-->
+				<!-- ============================= -->
+				<div class="plan-orange-section">
+					<div class="col-md-12">
+						<p class="orange-jop-seeker-title">Recruiter Lite features</p>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-orange-head ">
+									<p class="plan-item-info"><i class="fa fa-envelope" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Direct messaging to recruiters</p>
+								<span>Reach out directly to any recruiter or job poster with 5 InMail credits</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-orange-head ">
+									<p class="plan-item-info"><i class="fa fa-eye" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Who's Viewed Your Profile</p>
+								<span>See who's viewed you in the last 90 days and how they found you</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-orange-head ">
+									<p class="plan-item-info"><i class="fa fa-search" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Featured Applicant</p>
+								<span>Move to the top of recruiters' applicant lists</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="plan-orange-head">
+									<p class="plan-item-info"><i class="fa fa-user" aria-hidden="true"></i></p>
+								</div>
+							</div>
+							<div class="col-md-9 plan-item-info-p">
+								<p>Applicant Insights</p>
+								<span>See how you compare to other candidates</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-4">
+							<p class="sports-com">Sports.com, a Sports company</p>
+						</div>
+						<div class="col-md-8 orange-sports-item-fm ">
+							<p><span>Limited time offer</span><button>new</button></p>
+							<p>On-demand courses to advance your career</p>
+							<p>Master in-demand skills with full access to over 4,100 expert-led courses on Lynda.com, a LinkedIn company†</p>
+						</div>
+					</div>
+				</div>
+				<!-- =============================-->
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hr-line" style="padding:1px;background:silver;margin-top:20px;margin-bottom:20px;"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 premium-information">
+					<p><button>Start may free month</button></p>
+					<p>No commitment for 1 month - cancel anytime</p>
+					<p>After your free month, you'll pay ₹1,400* / month</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container second-full-bg ">
+		<div class="row">
+			<div class="col-md-12 padding-row">
+				<p class="premium-item-p">Your day <span>job hunting</span>with LinkedIn Premium</p>
+				<div class="item-img">
+					<img src="/assets/pre.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<p class="premium-item-p"><span>Know how you compare</span> to the competition</p>
+				<p class="premium-sup-item-p">
+					When you find a job posting at a company you love, you can use Applicant Insights to see how you compare to other applicants by seniority level, education, top skills, and more, so you can apply with confidence.
+				</p>
+				<div class="item-img-center">
+					<img src="/assets/pre1.png" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<div class="item-img">
+					<img src="/assets/pre2.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<p class="premium-item-p"><span>Stand out</span> as a Featured Applicant</p>
+				<p class="premium-sup-item-p">
+					Your application hits the job poster's inbox along with several others'. But with Job Seeker, you come in at the top of the list, immediately drawing the poster's attention.
+				</p>
+				<div class="item-img-center">
+					<img src="/assets/pre3.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<div class="item-img">
+					<img src="/assets/pre4.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<p class="premium-item-p"><span>Know when someone's interested</span> in you</p>
+				<p class="premium-sup-item-p">
+					See who's viewed your profile in the last 90 days, like that recruiter who just looked at you. Free members only see the last 5 viewers.
+				</p>
+				<div class="item-img-center">
+					<img src="/assets/pre5.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<div class="item-img">
+					<img src="/assets/pre6.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<p class="premium-item-p"><span>Reach out</span> with confidence</p>
+				<p class="premium-sup-item-p">
+					With InMail, you can contact anyone on sports – from that recruiter who just viewed your profile to the hiring manager who's interested in you.
+				</p>
+				<div class="item-img-center">
+					<img src="/assets/pre7.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<div class="item-img">
+					<img src="/assets/pre8.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 padding-row">
+				<p class="premium-item-p"><span>Let opportunities come to you</span> </p>
+				<p class="premium-sup-item-p">
+					When you upgrade to Premium, you can let any LinkedIn member see your full profile and reach out to you for free, so you'll never miss an opportunity.
+				</p>
+				<div class="item-img-center">
+					<img src="/assets/pre9.jpg" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-12 align-top">
+				<div class="line-hr"></div>
+			</div>
+		</div>
+	</div>
+	<div class="container second-full-bg">
+		<div class="row align-top">
+			<p class="premium-item-p">Members achieve their professional goals with Premium</p>
+			<div class="col-md-12">
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<div class="premium-image">
+						<img src="/assets/pro.png" class="img-responsive goals-img">
+					</div>
+				</div>
+				<div class="col-md-10 col-sm-10 col-xs-6 padd-decrease">
+					<div class="premium-head-title">
+						<p class="goals-pre">"I applied as a Featured Applicant on a posting, and within two to three weeks, I had finished the process and received my offer letter!"</p>
+						<p class="premium-sub-title"><b>Patrick Loyd</b>, Support Engineer at CA Technologies</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<div class="premium-image">
+						<img src="/assets/pro.png" class="img-responsive goals-img">
+					</div>
+				</div>
+				<div class="col-md-10 col-sm-10 col-xs-6 padd-decrease">
+					<div class="premium-head-title">
+						<p class="goals-pre">"I applied as a Featured Applicant on a posting, and within two to three weeks, I had finished the process and received my offer letter!"</p>
+						<p class="premium-sub-title"><b>Patrick Loyd</b>, Support Engineer at CA Technologies</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container second-full-bg">
+		<div class="row align-top">
+			<p class="premium-item-p">Frequently asked questions</p>
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<div class="fre-que-tit">
+						<p><b>What happens at the end of my free trial?</b></p>
+						<p>Your membership will automatically renew at the end of your free month. You can cancel at any time prior to the renewal at linkedin.com/settings.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="fre-que-tit">
+						<p><b>What happens at the end of my free trial?</b></p>
+						<p>Your membership will automatically renew at the end of your free month. You can cancel at any time prior to the renewal at linkedin.com/settings.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<div class="fre-que-tit">
+						<p><b>What happens at the end of my free trial?</b></p>
+						<p>Your membership will automatically renew at the end of your free month. You can cancel at any time prior to the renewal at linkedin.com/settings.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="fre-que-tit">
+						<p><b>What happens at the end of my free trial?</b></p>
+						<p>Your membership will automatically renew at the end of your free month. You can cancel at any time prior to the renewal at linkedin.com/settings.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<div class="fre-que-tit">
+						<p><b>What happens at the end of my free trial?</b></p>
+						<p>Your membership will automatically renew at the end of your free month. You can cancel at any time prior to the renewal at linkedin.com/settings.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="fre-que-tit">
+						<p><b>What happens at the end of my free trial?</b></p>
+						<p>Your membership will automatically renew at the end of your free month. You can cancel at any time prior to the renewal at linkedin.com/settings.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container allign-top">
+		<div class="row">
+			<div class="col-md-12">
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$('.plan-orange-section, .plan-blue-section, .plan-violet-section').hide();
+	$('.click-green').click(function(){
+		$('.plan-green-section').show();
+		$('.plan-orange-section, .plan-blue-section, .plan-violet-section').hide();
+		$('body , html').animate({
+			scrollTop: $(".plan-green-section").offset().top
+		}, 'slow');
+	});
+
+	$('.click-blue').click(function(){
+		$('.plan-blue-section').show();
+		$('.plan-orange-section, .plan-green-section, .plan-violet-section').hide();
+		$('body , html').animate({
+			scrollTop: $(".plan-blue-section").offset().top
+		}, 'slow');
+	});
+
+	$('.click-orange').click(function(){
+		$('.plan-orange-section').show();
+		$('.plan-blue-section, .plan-green-section, .plan-violet-section').hide();
+		$('body , html').animate({
+			scrollTop: $(".plan-orange-section").offset().top
+		}, 'slow');
+	});
+
+	$('.click-violet').click(function(){
+		$('.plan-violet-section').show();
+		$('.plan-blue-section, .plan-green-section, .plan-orange-section').hide();
+		$('body , html').animate({
+			scrollTop: $(".plan-violet-section").offset().top
+		}, 'slow');
+
+	});
+</script>
+
+<script>
+	$(document).on("load", function() {
+		alert("load");
+		<% @plans.each do |plan| %>
+			if(<%= plan.id %> == 1){
+				var plans = "<ul><li>test</li></ul>"
+				$('.plan<%plan.id%>').append(plans);
+			}
+		<%end%>
+	});
+</script>

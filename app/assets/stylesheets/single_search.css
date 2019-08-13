@@ -1,0 +1,163 @@
+.singleuser_head img {
+	width: 100%;
+	height: 295px;
+}
+.single-user-left {
+	padding: 10px;
+	background: #fff;
+  margin-top: -116px;
+  border: 1px solid #D6DBDF;
+}
+
+.single-user-left img {
+	width: 200px;
+	height: 225px
+  margin-left: -10px;
+  float: left;
+  margin-right: 20px;
+}
+.single-user-left p {
+	margin-bottom: 2px;
+}
+.user_name {
+	font-size: 25px;
+	font-weight: bold;
+}
+.user_title {
+	font-size: 17px;
+}
+
+.user_city {
+	font-size: 15px;
+}
+
+.user_item {
+	font-size: 13px;
+}
+
+.user_right_item {
+	font-size: 13px;
+	font-weight: bold;
+	margin-left: 30px;
+}
+
+.user_contact {
+	padding: 10px;
+	background-color: #eee;
+	border-top: 1px dotted #000;
+}
+
+.user_post {
+	padding: 10px;
+	background: #fff;
+  height: 300px;
+  border: 1px solid #D6DBDF;
+  margin-top: 30px;
+}
+.btn-black-them {
+  border-radius: 0px;
+  margin-left: -10px;
+  margin-top: -10px;
+  width: 145px;
+  color: #fff;
+  background: #000;
+}
+
+.all-post {
+	padding: 5px;
+	height: 245px;
+	background: #eee;
+}
+
+.all-post p {
+	font-size: 15px;
+	font-weight: bold;
+}
+.user_data {
+	padding: 10px;
+	background: #fff;
+  border: 1px solid #D6DBDF;
+  margin-top: 30px;
+}
+
+.data-item {
+	padding: 10px;
+	border-bottom:1px solid #D6DBDF;
+
+}
+.data-item p {
+	font-size: 15px;
+}
+
+.user_recommendations {
+	padding: 10px;
+	background: #fff;
+  border: 1px solid #D6DBDF;
+  margin-top: 30px;
+
+}
+
+.user_recommendations p {
+	font-size: 13px;
+}
+
+.recom-item {
+	margin-top:10px; 
+	border-bottom: 1px solid #D6DBDF;
+}
+
+.user_following {
+	padding: 10px;
+	background: #fff;
+  border: 1px solid #D6DBDF;
+  margin-top: 30px;
+
+}
+
+.single-user-right {
+	padding: 10px;
+	background: #fff;
+  margin-top: -116px;
+  border: 1px solid #D6DBDF;
+}
+
+.user-right-content {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.user-profile-btn {
+	text-align: center;
+}
+
+.profile-btn-them {
+	border-radius: 0px;
+	background: #16A086;
+	color: #fff;
+	margin-bottom: 30px;
+
+}
+
+.user-peopel-view p{
+	font-size: 11px;
+	margin-bottom: 2px;
+}
+
+.people-view-item {
+	margin-bottom:30px
+}
+
+.people-view-item img{
+	float:left;
+	width:50px;
+	height:50px;
+	margin-right:10px;
+	position: relative;
+}
+
+.profile-action-dropdown {
+	margin-top: 20px;
+}
+
+.advance-search-table {
+	padding: 25px;
+}

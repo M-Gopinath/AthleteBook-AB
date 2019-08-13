@@ -1,0 +1,51 @@
+<!-- <div class="container" style="margin-top: 110px;">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-12">
+              <p style="text-align: center;">Upload a video to show your skill</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <%= form_for :uservideo, url: upload_video_path, :html => {:id => "userVideoForm"} do |f| %>
+              	<div>
+              	<% if @uservideo.errors.any? %>
+   								<div id="error_explanation">
+    								<ul>
+     									<% @uservideo.errors.each do |a, msg | %>
+        								<li><%= msg %></li>
+      								<% end %>
+    								</ul>
+    							</div>
+  							<% end %>
+  							</div>
+                <div class="form-group">
+                  <%= f.label :UploadVideo %><br>
+    							<%= f.file_field :user_video, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="text-center">
+                        <%= f.submit "Upload Video", tabindex: "5", class: "btn btn-primary" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="form-group" style="text-align: center;">
+              <%= link_to 'Back', home_edit_profile_path, class:"btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

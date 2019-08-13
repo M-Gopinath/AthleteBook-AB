@@ -1,0 +1,28 @@
+test: &default
+
+  client_id: AUn4ja8g0kYbpBFsIAysuusHP0XUKvSvixOR7vOY7e99TBmAG-tzMrVdV3BhYo3OP6ih3OCk1LQxVasE
+  client_secret: ECGZHWt4-Y-jRYBaDQQlVhUe34e2OxfD-IKe5YoXRaWHOFbvvZWh-FsMK0CjYlrMRL7BdrouF6x5JMX8
+
+  # Mode can be 'live' or 'sandbox'
+  mode: sandbox
+
+  # Credentials for Classic APIs
+  app_id: APP-80W284485P519543T
+  username: payments-facilitator_api1.vivento.io
+  password: PXA87627G92MHP65
+  signature: AiPC9BjkCyDFQXbSkoZcgqH3hpacASD7gls2faqWDmysU2YX8RE7c06p
+  sandbox_email_address: Platform.sdk.seller@gmail.com
+  http_timeout: 30
+  # # IP Address
+  # ip_address: 127.0.0.1
+  # # HTTP Proxy
+  # http_proxy: http://proxy-ipaddress:3129/
+
+  # verbose_logging: true
+
+development:
+  <<: *default
+
+production:
+  <<: *default
+  mode: live

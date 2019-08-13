@@ -1,0 +1,16 @@
+ <% if @sponsor.nil? %>
+	toastr.error('already available in sponsor');
+<%else%>
+    <% if @sponsor.errors.present?%>
+	    <%@sponsor.errors.full_messages.each do |error|%>
+	     	toastr.error('<%= error %>');
+	     <%end%>
+	   <%else%>
+	    	toastr.success("sponsor created");
+			  location.reload();
+    <%end%>
+	// toastr.success("sponsor created");
+	// location.reload();
+<%end%>
+
+

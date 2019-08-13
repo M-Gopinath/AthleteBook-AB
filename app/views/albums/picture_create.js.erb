@@ -1,0 +1,14 @@
+<%unless @picture.valid?%>
+	<% @picture.errors.full_messages.each do |error| %>
+		console.log('<%= error %>');
+		toastr.error('<%= error %>');
+	<%end%>
+<%else%>
+    toastr.success("picture was successfully created");
+	location.reload();
+<%end%>
+
+
+
+
+

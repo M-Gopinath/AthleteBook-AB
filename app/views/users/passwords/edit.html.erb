@@ -1,0 +1,49 @@
+<div class="container" style="margin-top: 110px;">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-12">
+              <p style="text-align: center;">Change Your Password</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+              <%= devise_error_messages! %>
+              <%= f.hidden_field :reset_password_token %>
+                <div class="form-group">
+                  <%= f.label :password, "New password" %><br />
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+                  <% end %>
+                  <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :password_confirmation, "Confirm new password" %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="text-center">
+                        <%= f.submit "Change my password", tabindex: "5", class: "btn btn-primary" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="form-group" style="text-align: center;">
+              <%= render "users/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

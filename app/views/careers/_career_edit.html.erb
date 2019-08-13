@@ -1,0 +1,31 @@
+<%= form_for @career,url: career_update_path(@career),remote:true ,id:"update_carrer_form" ,method: :PUT do |f| %>
+<fieldset class="form-group">
+	<label for="formGroupExampleInput">Career Name</label>
+	<%#=text_field_tag :carrer_name ,nil,class:"form-control",name: "career[carrer_name]"%>
+	<%=f.text_field :carrer_name ,class:"form-control"%>
+</fieldset>
+
+<fieldset class="form-group">
+	<label for="formGroupExampleInput">Year</label>
+	<%=f.text_field :year ,class:"form-control"%>
+	<%#=text_field_tag :year ,nil,class:"form-control",name: "career[year]"%>
+</fieldset>
+
+<fieldset class="form-group">
+	<label for="formGroupExampleInput">Image</label>
+	<%=f.file_field :career_file ,class:"form-control"%>
+	<%#=file_field_tag :career_file ,class:"form-control",name: "career[career_file]"%>
+</fieldset>
+
+<fieldset class="form-group">
+	<label for="formGroupExampleInput">Description</label>
+	<%=f.text_area :description ,class:"form-control"%>
+	<%#=text_area_tag :description ,nil,class:"form-control",name: "career[description]"%>
+</fieldset>
+<%=hidden_field_tag :user_id, value:current_user.id%>
+
+<span>See example</span>
+<fieldset class="form-group">
+	<button class="submit_btn btn btn-primary" type="submit" id="career_submit_form" >Update</button>
+</fieldset>
+<%end%>

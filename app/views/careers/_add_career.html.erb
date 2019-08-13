@@ -1,0 +1,34 @@
+ <div class="career-details">
+  <div class="add-career-details" style="padding:15px;background:#fff;" >
+  <%=form_tag add_careers_create_path,remote:true ,id:"career_form"  do %>
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput">Career Name</label>
+      <%=text_field_tag :carrer_name ,nil,class:"form-control",name: "career[carrer_name]"%>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput">Year</label>
+      <%=text_field_tag :year ,nil,class:"form-control",name: "career[year]"%>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput">Image</label>
+      <%=file_field_tag :career_file ,class:"form-control",name: "career[career_file]"%>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput">Description</label>
+      <%=text_area_tag :description ,nil,class:"form-control",name: "career[description]"%>
+    </fieldset>
+    <%=hidden_field_tag :user_id, value:current_user.id%>
+
+    <fieldset class="form-group">
+      <button class="submit_btn btn btn-primary" type="submit" id="career_submit_form" >Save</button>
+    </fieldset>
+    <%end%>
+    <fieldset class="form-group">
+      <button class="btn btn-default cancel-btn">Cancel</button> 
+    </fieldset>
+  </div>
+
+</div>

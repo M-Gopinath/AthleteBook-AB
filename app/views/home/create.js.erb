@@ -1,0 +1,10 @@
+<% if @user.persisted? %>
+	$(".notice").html("Confirmation mail was sent your email. Please check your email.");
+	$("#newRegistration").trigger("reset");
+	clearImageName();
+<% else %>
+	$(".notice").html("Can't create your account. Please try again.");
+	$("#newRegistration").trigger("reset");
+	clearImageName();
+<% end %>
+

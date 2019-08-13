@@ -1,0 +1,8 @@
+<%unless @add_career.valid?%>
+	<% @add_career.errors.full_messages.each do |error| %>
+		toastr.error('<%= error %>');
+	<%end%>
+<%else%>
+    toastr.success("career successfully created");
+	location.reload();
+<%end%>

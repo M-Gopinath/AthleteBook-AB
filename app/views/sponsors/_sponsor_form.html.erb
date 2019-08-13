@@ -1,0 +1,17 @@
+<div class="sponsors-details">
+  <div class="add-sponsors-details" style="padding:15px;background:#fff;" >
+    <%=flash[:notice]%>
+    <%= form_tag sponsor_create_path,:remote => true do %>
+      <fieldset class="form-group">
+       <label for="exampleSelect1">Sponsors</label>.
+       <%=select_tag :company_id, options_for_select( User.where('role_id = ?', 3).map{ |a| [a.company_name,a.id]}),prompt: "Select Sponsor",class:"form-control"%>
+      </fieldset>
+      <fieldset class="form-group">
+       <button class="btn btn-primary edu-cancel-btn " id = "sponsor_form" type="submit" ng-disabled="educationForm.$invalid" >Save</button>
+      </fieldset>
+    <%end%>
+    <fieldset class="form-group">
+      <button class="btn btn-default cancel-btn">Cancel</button> 
+    </fieldset>
+  </div>
+</div>

@@ -1,0 +1,541 @@
+<div class="bs-demo-showcase">
+  <nav class="navbar navbar-material-blue navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-animations">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">
+          <img src="/assets/sports_logo.png" style="width:163px;margin-top: -5px;
+          height: 53PX;">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-animations" data-hover="dropdown" data-animations="fadeInDownNew fadeInRightNew fadeInUpNew fadeInLeftNew">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span><i class="fa fa-newspaper-o"></i></span></a>
+            <ul class="dropdown-menu header-drop-down" role="menu">
+              <li><a href="#">Account & setting</a></li>
+              <li><a href="#">Another action</a></li>
+              
+              <li class="dropdown">
+                <a href="#">Another dropdown 2 <span class="caret"></span></a>
+              </li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span><i class="fa fa-bell-o"></i></span></a>
+            <ul class="dropdown-menu header-drop-down" role="menu">
+              <li><a href="#">Account & setting</a></li>
+              <li><a href="#">Another action</a></li>
+              
+              <li class="dropdown">
+                <a href="#">Another dropdown 2 <span class="caret"></span></a>
+              </li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span><i class="fa fa-user-plus"></i></span></a>
+            <ul class="dropdown-menu header-drop-down" role="menu">
+              <li><a href="#">Account & setting</a></li>
+              <li><a href="#">Another action</a></li>
+              
+              <li class="dropdown">
+                <a href="#">Another dropdown 2 <span class="caret"></span></a>
+              </li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="caret"></span></a>
+            <ul class="dropdown-menu header-drop-down" role="menu">
+              <div class="account-setting-title">
+                Account & setting
+              </div>
+              <div class="setting-section">  
+                <span >
+                  <% if user_signed_in? %>
+                    <%= link_to('Logout', destroy_user_session_path, :method => :delete, :style => 'margin-right: 9px;margin-top: -5px;', :class =>'pull-right date-title') %>
+                  <% end %>
+                <span>
+                <span style="margin-left:5px;"><%= current_user.first_name%></span>
+              </div>
+              <div class="setting-section">
+                <span class="pull-right">Try Premium</span>
+                <span>Account Basic</span>
+              </div>
+              <div class="setting-section">
+                <span class="pull-right">Manage</span>
+                <span>Privacy & Settings</span>
+              </div>
+              <div class="setting-section">
+                <span class="pull-right">Changed</span>
+                <span>Language</span>
+              </div>
+              <div class="setting-section">
+                <span class="pull-right">Get Help</span>
+                <span>Help Center</span>
+              </div>
+            </ul>
+          </li>
+        </ul>
+        <div class="row">    
+          <div class="col-xs-12 col-md-4 col-sm-4 search-filter" style="width:50%;margin-left:10%; margin-top:20px;">
+            <div class="input-group">
+              <div class="input-group-btn search-panel dropdown">
+                <button type="button" class="btn btn-default dropdown-toggle filter-btn" data-toggle="dropdown" style="border-radius:0px;background: #575757;background-image: -webkit-linear-gradient(top, #888888 0%,#888888 4%,#575757 100%); border:1px solid #888888;">
+                  <span id="search_concept"><i class="fa fa-bars" aria-hidden="true"></i></span> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu filter-dropdown-menu" role="menu">
+                  <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i>All</a></li>
+                  <li><a href="#">People</a></li>
+                  <li><a href="#"><i class="fa fa-building-o" aria-hidden="true"></i>Company</a></li>
+                  <li><a href="#">Team</a></li>
+                </ul>
+              </div>
+              <input type="hidden" name="search_param" value="all" id="search_param">         
+              <input class="search form-control" type="text"  placeholder="search for people,Comapnies,and more...">
+              <span class="input-group-btn">
+                <button class="btn search-btn" type="button" style="margin-left:3px;">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>
+<!-- nav -->
+
+
+<!-- new sub head -->
+<div class="sub-head">
+  <nav id="main-nav" role="navigation">
+    <ul id="main-menu" class="sm sm-blue">
+      <li><a href="">Home</a></li>
+      <li><a href="#/edit_profile"> Profile </a>
+        <ul class="new-ul">
+          <li><a href="#/edit_profile">Edit Profile</a></li>
+          <li><a href="">Who's Viewed Your Profile</a></li>
+          <li><a href="">Your Updates</a>
+        </ul>
+      </li>
+      <li><a href="">My Network</a>
+        <ul class="new-ul">
+          <li><a href="">Conection</a></li>
+          <li><a href="">Add Contacts</a></li>
+          <li><a href="">People You Mayknow</a>
+          <li><a href="">Find Alumni</a>
+        </ul>
+      </li>
+      <li><a href="">Jobs</a></li>
+      <li><a href="">Interests</a>
+        <ul class="new-ul">
+          <li><a href="">Companies</a></li>
+          <li><a href="">Groups</a></li>
+          <li><a href="">SlidShare</a></li>
+          <li><a href="">Learning</a>
+        </ul>
+      </li>
+      <li><a href="">Business Services</a>
+        <ul class="new-ul">
+          <li><a href="">Post a Job</a></li>
+          <li><a href="">Talent solutions</a></li>
+          <li><a href="">Advertise</a></li>
+          <li><a href="">Sales Solutions</a>
+        </ul>
+      </li>
+      <li><a href="">Try Premium</a>
+        <ul class="new-ul">
+          <li><a href="">Post a Jop</a></li>
+          <li><a href="">Talent solutions</a></li>
+          <li><a href="">Advertise</a></li>
+          <li><a href="">Sales Solutions</a>
+          </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- <div class="col-md-12 panel">
+	<div class="panel-header">	 -->
+		<%#= link_to 'Compare', home_athlete_campare_path(user: @user), :class => 'btn btn-primary'%>
+		<%# @sess_val = session[:athlete_id] ? session[:athlete_id].uniq : 0 %>
+		<%# if session[:athlete_id] && @sess_val.length > 0 %>
+  		<%#= link_to 'Compare multiple', home_athlete_campare_page_path(session[:athlete_id]), :class => 'btn btn-success'%>
+        <span><%#= @sess_val.length %></span>
+		<%# end %>
+	</div>
+	<!-- <div class="panel-body"> -->
+		<%#= user_details(@user, 'first_name') %>
+    <%#= user_details(@user, 'last_name') %>
+    <%#= user_details(@user, 'gender') %>
+    <%#= user_details(@user, 'email') %>
+		<%#= user_details(@user, 'date_of_birth') %>
+		<%#= athlete_details(@athlete, 'public_image') %>
+		<%#= athlete_details(@athlete, 'phone') %>
+		<%#= athlete_details(@athlete, 'sports_name') %>
+		<%#= athlete_details(@athlete, 'address') %>
+		<%#= athlete_details(@athlete, 'college') %>
+		<%#= athlete_details(@athlete, 'exp') %>
+		<%#= athlete_details(@athlete, 'description') %>
+	</div>
+</div>
+
+  <div class="edit-profile">
+    <div class="container">
+     <div class="row">
+      </div>
+      <div class="col-md-8">
+         
+    <div class="col-md-12">
+      <div class="row edit-profile-image" style="margin-top: 25px;">
+        <div class="col-md-4">
+          <img src ="<%= current_user.user_profile.public_image.url%>">
+          <%#= image_tag current_user.user_profile.public_image.url %>
+        </div>
+        <div class="col-md-8">
+          <div class="edit-profile-info" style="margin-top:15px;">
+            <div class="profile-info">
+              <a href="" style="margin:5px;color:#000;border-bottom: 1px solid #fff !important;"><%= user_details(@user, 'first_name') %></a>
+            </div>
+            <div class="profile-info">
+              <a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;"><%= user_details(@user, 'gender') %></a>,<span style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;">Age - <%= ((Date.today - user_details(@user, 'date_of_birth').utc.to_date) / 365.25).to_i%></span>
+            </div>
+            <div class="profile-info">
+              <a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Sportsname"><%= athlete_details(@athlete, 'sports_name') %><span></a>
+            </div>
+            <div class="profile-info">
+              <a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Address"><%= athlete_details(@athlete, 'address') %></a>
+            </div>
+            <div class="profile-info">
+              <a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="College"><%= athlete_details(@athlete, 'college') %></a>
+            </div>
+            <div class="profile-info">
+              <a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Exprience"><%= athlete_details(@athlete, 'exp') %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="col-md-12">
+  <div class="row">
+    <div class="public-profile-info">
+      <p>Visible to your connections</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="profile-item">
+            <label>Email</label><a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;" e-placeholder="Email" ng-model="profile.email"><%= user_details(@user, 'email') %></a>
+          </div>
+          <div class="profile-item">
+            <label>Im</label><a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;">Im</a>
+          </div>
+        </div>
+      <div class="col-md-6">
+        <div class="profile-item">
+         <label>Phone</label><a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;"><%= athlete_details(@athlete, 'phone') %></a>
+        </div>
+        <div class="profile-item">
+         <label>Address</label><a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;"><%= athlete_details(@athlete, 'address') %></a>
+        </div>
+      </div>
+    </div>
+    <p>Visible to everyone on Sports</p>
+<div class="row">
+ <div class="col-md-6">
+    <div class="profile-item">
+      <label><i class="fa fa-twitter"></i></label><a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;">Twitter</a>
+    </div>
+    <div class="profile-item">
+      <label><i class="fa fa-wechat"></i></label><a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;">Wechat</a>
+    </div>
+    <div class="profile-item">
+      <label><i class="fa fa-globe"></i></label><a href="" style="margin:5px;color:#000!important;border-bottom: 1px solid #fff !important;">Website</a>
+    </div>
+</div>
+<div class="col-md-6">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-12">
+  <div class="row">
+   <div class="public-profile-section">
+    <p style="font-size:12px;line-height:30px;"><span>f</span>{{player_information.sports_web_url}}<span>{{player_information.name}}</span> <span class="contact-info pull-right" style="cursor:pointer">Contact info</span> </p>
+  </div>
+</div>
+</div>
+
+<div class="col-md-12 view-more-details">
+  <div class="row sum-content">
+   <div class="col-md-6">
+    <div class="sum-content-sub">
+     <div class="career-details">
+      <img src="/assets/sumery.png">
+      <p class="view-title">Volunteering Experience</p>
+      <p class="view-sub-title">{{player_information.summary}}</p>
+    </div>
+    <p class="add-summary">Add Volunteering Experience</p>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/langu.png">
+    <p class="view-title">Volunteering Opportunities</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-lang">Add Volunteering Opportunities</p>
+</div>
+</div>
+</div>
+<div class="row sum-content">
+ <div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/sumery.png">
+    <p class="view-title">Organization</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-summary">Add Organization</p>
+
+</div>
+</div>
+<div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/langu.png">
+    <p class="view-title">Honors & Awards</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-lang">Add Honors & Awards<</p>
+</div>
+</div>
+</div>
+<div class="row sum-content">
+ <div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/sumery.png">
+    <p class="view-title">Test Scores</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-summary">Add Test Scores</p>
+
+</div>
+</div>
+<div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/langu.png">
+    <p class="view-title">Course</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-lang">Add Course</p>
+</div>
+</div>
+</div>
+<div class="row sum-content">
+ <div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/sumery.png">
+    <p class="view-title">Patents</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-summary">Add Patents</p>
+</div>
+</div>
+<div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/langu.png">
+    <p class="view-title">Casuse you care about</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-lang">Add Casuse you care about</p>
+</div>
+</div>
+</div>
+<div class="row sum-content">
+ <div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/sumery.png">
+    <p class="view-title">Supported</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-summary">Add Supported</p>
+
+</div>
+</div>
+<div class="col-md-6">
+  <div class="sum-content-sub">
+   <div class="career-details">
+    <img src="/assets/langu.png">
+    <p class="view-title">Organization</p>
+    <p class="view-sub-title">{{player_information.summary}}</p>
+  </div>
+  <p class="add-lang">Add Organization</p>
+</div>
+</div>
+</div>
+</div>
+<!-- About -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">About(Description)</p>
+    <div class="skill-details">
+      <div class="experience-details" style="padding:15px;background:#fff;" >
+       <p><%= athlete_details(@athlete, 'description') %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About end  -->
+<!-- social media power -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">Social Media Power</p>
+    <div class="skill-details">
+      <div class="experience-details" style="padding:15px;background:#fff;" >
+       <p>kkkk</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Social media power end -->
+<!-- Career -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">Career</p>
+    <div class="skill-details">
+      <div class="experience-details" style="padding:15px;background:#fff;" >
+       <p>kkkk</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Career end -->
+<!-- Sponsors -->
+<div class="col-md-12" style="margin-top:10px;">
+  <div class="row">
+    <p class="pro-title">Sponsors</p>
+    <div class="skill-details">
+      <div class="experience-details" style="padding:15px;background:#fff;" >
+       <p>kkkk</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sponsors end -->
+
+  <div class="col-md-12" style="margin-top:10px;">
+    <div class="row" style="padding:5px;background-color:#fff;">
+      <p class="pro-title">Following</p>
+      <div class="col-md-3">
+        <div class="folow-item">
+          <img src="/assets/news2.jpg">
+          <p>Football Trophy Secret Highlight 2015</p>
+          <p>20,388,610 <span>followers</span></p>
+          <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn" ng-click='followBtn()'>Follow</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="folow-item">
+          <img src="/assets/news3.jpg">
+          <p>Football Trophy Secret Highlight 2015</p>
+          <p>20,388,610 <span>followers</span></p>
+          <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="folow-item">
+          <img src="/assets/news4.jpg">
+          <p>Football Trophy Secret Highlight 2015</p>
+          <p>20,388,610 <span>followers</span></p>
+          <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="folow-item">
+          <img src="/assets/news2.jpg">
+          <p>Football Trophy Secret Highlight 2015</p>
+          <p>20,388,610 <span>followers</span></p>
+          <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="folow-item">
+          <img src="/assets/news3.jpg">
+          <p>Football Trophy Secret Highlight 2015</p>
+          <p>20,388,610 <span>followers</span></p>
+          <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="folow-item">
+          <img src="/assets/news4.jpg">
+          <p>Football Trophy Secret Highlight 2015</p>
+          <p>20,388,610 <span>followers</span></p>
+          <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="folow-item">
+          <img src="/assets/news.png">
+          <p>Football Trophy Secret Highlight 2015</p>
+          <p>20,388,610 <span>followers</span></p>
+          <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="folow-item">
+          <img src="/assets/news.png">
+          <p>Football Trophy Secret Highlight 2015</p>
+          <p>20,388,610 <span>followers</span></p>
+          <p><span><i class="fa fa-plus"></i></span><a href="" class="follow-btn"  ng-click='followBtn()'>Follow</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <div style="margin-top: 25px;">
+    <div class="panel-header"> 
+    <% unless session[:athlete_id].present? && (session[:athlete_id].include? @user.id.to_s) %>
+      <%= link_to 'Compare', home_athlete_campare_path(user: @user), :class => 'btn btn-primary'%>
+    <% end %> 
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".contact-info").click(function(){
+      $(".public-profile-info").slideToggle( "slow" );
+    });
+    $(".contact-info-save").click(function(){
+      $(".public-profile-info").hide( "slow" );
+    });
+  });
+</script>

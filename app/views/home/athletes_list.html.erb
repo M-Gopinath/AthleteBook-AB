@@ -1,0 +1,32 @@
+<h3 align="center">Search "<%= @search_string.present? ? @search_string : "users" %>"</h3>
+<p style="color:red;"><%= flash[:error] %></p>
+<div class="campare-btn">
+  <% @sess_val = session[:athlete_id] ? session[:athlete_id].uniq : 0 %>
+  <% if session[:athlete_id] && @sess_val.length > 1 %>
+  <%= link_to 'Compare multiple', home_athlete_campare_page_path(session[:athlete_id]), :class => 'btn btn-success'%>
+  <span class="badge"><%= @sess_val.length %></span>
+  <% end %>
+</div>
+<!-- Page Features -->
+<div class="container">
+	<div class="row text-center">
+		<% @search.each do |user|%>
+		<%= link_to individual_athlete_path(user) do %>
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<img src="/assets/800x500.png" alt="">
+					<div class="caption">
+						<h3><%= user.first_name %></h3>
+						<p><%=h truncate(user.user_profile.try(:description) ? user.user_profile.try(:description) : 'Description Empty' , :length => 20 )  %></p>
+						<p>
+							<%#= link_to 'View Now!', individual_athlete_path(athlete), :class => 'btn btn-primary' %> <%= link_to 'More Info', individual_athlete_path(user), :class => 'btn btn-default' %>
+						</p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<% end%>
+    <% else %>
+	</div>
+</div>	
+

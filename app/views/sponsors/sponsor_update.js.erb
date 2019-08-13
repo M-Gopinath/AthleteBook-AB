@@ -1,0 +1,12 @@
+<%if  @sponsor_update.nil?%>
+toastr.error('already  updated');
+<%else%>
+	<%if @sponsor_update.errors.present?%>
+		<% @sponsor_update.errors.full_messages.each do |error| %>
+			toastr.error('<%= error %>');
+		<%end%>
+	<%else%>
+		toastr.success("sponsor updated successfully");
+		location.reload();
+	<%end%>
+<%end%>

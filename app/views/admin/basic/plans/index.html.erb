@@ -1,0 +1,24 @@
+<%= link_to "New Plan", new_admin_basic_plan_path, class:"btn btn-default" %>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Action</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @plans.each do |plan| %>
+    <tr>
+      <td><%= plan.name %></td>
+      <td><%= plan.description %></td>
+      <td><%= plan.price %></td>
+      <td><%= link_to 'Edit', edit_admin_basic_plan_path(plan), class:"btn btn-default" %></td>
+      <td><%= link_to 'Destroy', admin_basic_plan_path(plan), class:"btn btn-default",  method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Home", admin_path %>
